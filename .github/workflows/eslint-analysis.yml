@@ -1,0 +1,30 @@
+name: 'ESLint'
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
+
+permissions:
+  contents: read # Restrict to read-only for repository contents
+
+jobs:
+  build:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Dependencies
+        run: bun install --ci
+
+      - name: Lint
+        run: bun run lint
