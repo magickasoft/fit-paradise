@@ -1,3 +1,6 @@
+[![Maintainability](https://qlty.sh/badges/4ea960d6-d0e4-4485-87fa-40def28a77bb/maintainability.svg)](https://qlty.sh/gh/magickasoft/projects/fit-paradise)
+[![Code Coverage](https://qlty.sh/badges/4ea960d6-d0e4-4485-87fa-40def28a77bb/test_coverage.svg)](https://qlty.sh/gh/magickasoft/projects/fit-paradise)
+
 ## Getting Started
 
 First, run the development server:
