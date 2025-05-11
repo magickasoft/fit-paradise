@@ -1,5 +1,5 @@
-import { isProduction } from '../../process.env/node'
-import { domain } from '../../process.env/domain'
+import { isProduction } from '../../process.env/NODE_ENV'
+import { DOMAIN } from '../../process.env/domain'
 
 export const dynamic = 'force-static'
 
@@ -14,10 +14,10 @@ Disallow: /_next/*
 Crawl-delay: 1
 
 # Host
-Host: ${domain}
+Host: ${DOMAIN}
 
 # Sitemaps
-Sitemap: https://${domain}/sitemap.xml`
+Sitemap: https://${DOMAIN}/sitemap.xml`
     : `
 # *
 User-agent: *
