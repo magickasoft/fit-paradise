@@ -6,9 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}`,
-      lastModified: new Date().toISOString(),
+      lastModified: new Date().toISOString().split('T')[0],
       changeFrequency: 'daily',
-      priority: 1,
+      priority: 0.8,
+      images: [],
+      videos: [],
     },
   ]
 }
