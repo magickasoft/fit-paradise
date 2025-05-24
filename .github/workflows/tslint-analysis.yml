@@ -11,9 +11,11 @@ on:
     - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
 
 jobs:
-  lint:
-    name: ESLint
+  type-check:
+    name: TypeScript Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -25,5 +27,5 @@ jobs:
       - name: Install Dependencies
         run: bun install --ci
 
-      - name: Lint
-        run: bun run lint
+      - name: Type Checking
+        run: bun run type-check
