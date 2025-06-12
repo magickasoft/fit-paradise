@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Button from '@/components/Button'
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <Button>Кнопка</Button>
+        <Button primary>Кнопка primary</Button>
 
         <div className={styles.ctas}>
           <a
