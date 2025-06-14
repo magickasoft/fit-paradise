@@ -19,6 +19,10 @@ const StyledButton = styled.button<StyledButtonProps>`
   &:hover {
     background: ${props => (props.$primary ? '#005bbf' : '#f0f0f0')};
   }
+  &:focus-visible {
+    outline: 2px solid #0070f3;
+    outline-offset: 2px;
+  }
 `
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
