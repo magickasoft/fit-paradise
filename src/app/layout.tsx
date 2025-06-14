@@ -2,16 +2,10 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { YandexMetricaProvider } from '@artginzburg/next-ym'
+import StyledComponentsRegistry from '@/components/StyledComponentsRegistry'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -26,7 +20,9 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <YandexMetricaProvider>{children}</YandexMetricaProvider>
+        <StyledComponentsRegistry>
+          <YandexMetricaProvider>{children}</YandexMetricaProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
