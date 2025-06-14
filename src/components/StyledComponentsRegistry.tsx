@@ -9,20 +9,20 @@ export interface StyledComponentsRegistryProps {
 }
 
 export default function StyledComponentsRegistry({ children }: Readonly<StyledComponentsRegistryProps>) {
-  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
+  const [sheet] = useState(() => new ServerStyleSheet())
 
   useEffect(() => {
     return () => {
-      styledComponentsStyleSheet?.seal()
-      styledComponentsStyleSheet?.instance?.clearTag()
+      sheet?.seal()
+      sheet?.instance?.clearTag()
     }
   }, [])
 
   useServerInsertedHTML(() => {
-    const styles = styledComponentsStyleSheet?.getStyleElement()
-    styledComponentsStyleSheet?.instance?.clearTag()
+    const styles = sheet?.getStyleElement()
+    sheet?.instance?.clearTag()
     return <>{styles}</>
   })
 
-  return <StyleSheetManager sheet={styledComponentsStyleSheet?.instance}>{children}</StyleSheetManager>
+  return <StyleSheetManager sheet={sheet?.instance}>{children}</StyleSheetManager>
 }
