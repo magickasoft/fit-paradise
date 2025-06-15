@@ -18,13 +18,11 @@ const StyledButton = styled.button<StyledButtonProps>`
     opacity 0.2s;
   border: 1px solid #0070f3;
 
-  /* Disabled state styling */
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
 
-  /* Interactive states - only apply when not disabled */
   &:hover:not(:disabled) {
     background: ${props => (props.$primary ? '#005bbf' : '#f0f0f0')};
   }
