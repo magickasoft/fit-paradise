@@ -14,11 +14,12 @@ export default function StyledComponentsRegistry({ children }: Readonly<StyledCo
   useServerInsertedHTML(() => {
     try {
       const styles = sheet.getStyleElement()
-      sheet.instance.clearTag()
       return <>{styles}</>
     } catch (error) {
       console.error('Error processing styled-components styles:', error)
       return null
+    } finally {
+      sheet.instance.clearTag()
     }
   })
 
