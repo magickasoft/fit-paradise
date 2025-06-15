@@ -13,22 +13,22 @@ const StyledButton = styled.button<StyledButtonProps>`
   padding: 1rem 2rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: 
+  transition:
     background 0.2s,
     opacity 0.2s;
   border: 1px solid #0070f3;
-  
+
   /* Disabled state styling */
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
-  
+
   /* Interactive states - only apply when not disabled */
   &:hover:not(:disabled) {
     background: ${props => (props.$primary ? '#005bbf' : '#f0f0f0')};
   }
-  
+
   &:active:not(:disabled) {
     transform: translateY(1px);
   }
@@ -42,7 +42,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     outline: 2px solid #0070f3;
     outline-offset: 2px;
   }
-  
+
   &:focus:not(:focus-visible) {
     outline: none;
   }
@@ -54,29 +54,25 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   'aria-label'?: string
 }
 
-export default function Button({ 
-  primary, 
-  children, 
-  ...rest 
-}: Readonly<ButtonProps>) {
+export default function Button({ primary, children, ...rest }: Readonly<ButtonProps>) {
   useEffect(() => {
     if (!isProduction) {
-      const hasTextContent = typeof children === 'string' || 
-        (Array.isArray(children) && children.some(child => typeof child === 'string');
-      
-      const hasAriaLabel = rest['aria-label'] || rest['aria-labelledby'];
-      
+      const hasTextContent =
+        typeof children === 'string' || (Array.isArray(children) && children.some(child => typeof child === 'string'))
+
+      const hasAriaLabel = rest['aria-label'] || rest['aria-labelledby']
+
       if (!hasTextContent && !hasAriaLabel) {
         console.warn(
           'Button: Missing accessible name. Add text content or provide an aria-label ' +
-          'for icon-only buttons to ensure accessibility.'
-        );
+            'for icon-only buttons to ensure accessibility.',
+        )
       }
     }
-  }, [children, rest]);
+  }, [children, rest])
 
   return (
-    <StyledButton $primary={primary} {...rest}>
+    <StyledButton $primary={primary} aria-disabled={rest.disabled ? 'true' : undefined} {...rest}>
       {children}
     </StyledButton>
   )
