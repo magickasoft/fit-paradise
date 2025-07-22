@@ -1,0 +1,14 @@
+{
+  "btn": {
+    "default": {
+      "label": "Button default"
+    },
+    "primary": {
+      "label": "Button primary"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ru {Russia} en {English} other {Unknown}}"
+  }
+}

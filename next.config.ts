@@ -1,8 +1,15 @@
 import type { NextConfig } from 'next'
+import createNextIntlPlugin from 'next-intl/plugin'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
-const nextConfig: NextConfig = {
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    createMessagesDeclaration: './messages/ru.json',
+  },
+})
+
+const config: NextConfig = {
   compiler: {
     removeConsole: !isDevelopment ? { exclude: ['error', 'warn'] } : false,
     reactRemoveProperties: { properties: ['^data-test$'] },
@@ -14,4 +21,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default withNextIntl(config)

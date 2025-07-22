@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Button from '@/components/Button'
+import { useTranslations } from 'next-intl'
 
 export default function Home() {
+  const t = useTranslations('btn')
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -14,8 +16,8 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <Button>Кнопка</Button>
-        <Button primary>Кнопка primary</Button>
+        <Button>{t('default.label')}</Button>
+        <Button primary>{t('primary.label')}</Button>
 
         <div className={styles.ctas}>
           <a
