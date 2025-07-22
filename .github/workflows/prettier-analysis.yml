@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -27,5 +29,13 @@ jobs:
       - name: Install Dependencies
         run: bun install --ci
 
-      - name: Prettier
+      - name: Run Prettier Check
+        id: prettier
         run: bun run prettier-check
+
+      - name: Prettier Failure Handler
+        if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
+        run: |
+          echo "::error::Prettier found formatting issues!"
+          echo "Run 'bun run prettier-fix' locally to resolve issues"
+          exit 1
