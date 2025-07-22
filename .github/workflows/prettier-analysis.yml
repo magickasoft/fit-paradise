@@ -1,0 +1,29 @@
+name: 'Code Analysis'
+
+permissions: read-all
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
+
+jobs:
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Dependencies
+        run: bun install --ci
+
+      - name: Prettier
+        run: bun run prettier-check
