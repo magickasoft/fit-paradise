@@ -6,7 +6,8 @@ import { YandexMetricaProvider } from '@artginzburg/next-ym'
 import StyledComponentsRegistry from '@/components/StyledComponentsRegistry'
 import { notFound } from 'next/navigation'
 import { Locale, hasLocale, NextIntlClientProvider } from 'next-intl'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+// import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
