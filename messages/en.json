@@ -10,5 +10,15 @@
   "localeSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ru {Russia} en {English} other {Unknown}}"
+  },
+  "manifest": {
+    "name": "next-intl example"
+  },
+  "localeLayout": {
+    "title": "next-intl example"
+  },
+  "notFoundPage": {
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "title": "Page not found"
   }
 }
