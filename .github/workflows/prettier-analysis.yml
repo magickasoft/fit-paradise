@@ -11,8 +11,8 @@ on:
     - cron: 0 0 * * 1 # Every Monday at 00:00 UTC
 
 jobs:
-  type-check:
-    name: TypeScript Check
+  prettier:
+    name: Prettier
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,5 +29,13 @@ jobs:
       - name: Install Dependencies
         run: bun install --ci
 
-      - name: Type Checking
-        run: bun run type-check
+      - name: Run Prettier Check
+        id: prettier
+        run: bun run prettier-check
+
+      - name: Prettier Failure Handler
+        if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
+        run: |
+          echo "::error::Prettier found formatting issues!"
+          echo "Run 'bun run prettier-fix' locally to resolve issues"
+          exit 1

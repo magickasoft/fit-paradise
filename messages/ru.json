@@ -1,0 +1,24 @@
+{
+  "btn": {
+    "default": {
+      "label": "Кнопка default"
+    },
+    "primary": {
+      "label": "Кнопка primary"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Выберите язык",
+    "locale": "{locale, select, ru {Russia} en {English} other {Unknown}}"
+  },
+  "manifest": {
+    "name": "next-intl example"
+  },
+  "localeLayout": {
+    "title": "next-intl example"
+  },
+  "notFoundPage": {
+    "description": "Пожалуйста, еще раз проверьте адресную строку браузера или воспользуйтесь навигацией, чтобы перейти на известную страницу.",
+    "title": "Страница не найдена"
+  }
+}

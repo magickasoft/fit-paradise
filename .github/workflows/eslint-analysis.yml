@@ -1,4 +1,4 @@
-name: 'Code Analysis'
+name: Code Analysis
 
 permissions: read-all
 
@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [master]
   schedule:
-    - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
+    - cron: 0 0 * * 1 # Every Monday at 00:00 UTC
 
 jobs:
   lint:
@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
