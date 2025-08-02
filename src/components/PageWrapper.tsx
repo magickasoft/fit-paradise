@@ -5,14 +5,14 @@ import styled from 'styled-components'
 
 const Container = styled.header`
   display: flex;
-  margin: 120px 140px 60px 140px;
+  margin: 120px 140px 60px;
 
   @media ${maxDevice.tablet} {
-    margin: 120px 0px 60px 0px;
+    margin: 120px 0 60px;
   }
 
   @media ${maxDevice.mobileL} {
-    margin: 90px 0px 50px 0px;
+    margin: 90px 0 50px;
   }
 
   @media ${maxDevice.laptopL} {
@@ -26,7 +26,7 @@ const Label = styled.div`
   font-weight: normal;
   font-size: 40px;
   line-height: 48px;
-  color: #000000;
+  color: #000;
   margin-bottom: 40px;
 
   @media ${maxDevice.mobileL} {
@@ -42,7 +42,7 @@ const Text = styled.div`
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-  color: #777777;
+  color: #777;
   max-width: 760px;
 `
 

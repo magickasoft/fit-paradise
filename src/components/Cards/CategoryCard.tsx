@@ -50,7 +50,7 @@ const Card = styled.div<{ color?: string; variant: VariantType }>`
   &:hover {
     opacity: 1;
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgb(0, 0, 0, 0.15);
 
     .card-title {
       font-weight: 700;
@@ -62,7 +62,7 @@ const Card = styled.div<{ color?: string; variant: VariantType }>`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     min-width: 220px;
     height: ${({ variant }) => (variant === 'slider' ? '260px' : variant === 'large' ? '220px' : '180px')};
   }
@@ -81,7 +81,7 @@ const Title = styled.div<{ variant: VariantType }>`
     transform 0.3s ease,
     font-weight 0.3s ease;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: ${({ variant }) => (variant === 'large' ? '13px' : '11px')};
   }
 `
@@ -98,7 +98,7 @@ const Content = styled.div<{ variant: VariantType }>`
     height: ${({ variant }) => ContentHeight[variant]}px;
     object-fit: contain;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       width: ${({ variant }) => ContentWidth[variant] * 0.8}px;
       height: ${({ variant }) => ContentHeight[variant] * 0.8}px;
     }
