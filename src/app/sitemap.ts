@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { DOMAIN } from '../process.env/domain'
+import { DOMAIN } from '../variables/domain'
 import { Locale } from 'next-intl'
 import { routing } from '@/i18n/routing'
 import { getPathname } from '@/i18n/navigation'

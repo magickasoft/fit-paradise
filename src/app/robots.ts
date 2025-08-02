@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { DOMAIN } from '../process.env/domain'
+import { DOMAIN } from '../variables/domain'
 
 export default function robots(): MetadataRoute.Robots {
   return {
