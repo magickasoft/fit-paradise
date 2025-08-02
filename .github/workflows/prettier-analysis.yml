@@ -31,11 +31,11 @@ jobs:
 
       - name: Run Prettier Check
         id: prettier
-        run: bun run prettier-check
+        run: bun run prettier
 
       - name: Prettier Failure Handler
         if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
         run: |
           echo "::error::Prettier found formatting issues!"
-          echo "Run 'bun run prettier-fix' locally to resolve issues"
+          echo "Run 'bun run prettier:fix' locally to resolve issues"
           exit 1
