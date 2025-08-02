@@ -10,8 +10,6 @@ import { Locale, hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { Header } from '@/components/Header'
-import Script from 'next/script'
-import { YANDEX_METRICA_ID } from '@/process.env/YANDEX_METRICA_ID'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
