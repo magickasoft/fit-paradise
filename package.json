@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "prettier-fix": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prettier-check": "prettier --check \"**/*.{ts,tsx,md}\""
+    "prettier": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "prettier:fix": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
     "@artginzburg/next-ym": "^1.3.0",
