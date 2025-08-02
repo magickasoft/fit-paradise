@@ -5,8 +5,14 @@ export const routing = defineRouting({
   defaultLocale: 'ru',
   pathnames: {
     '/': '/',
-    '/pathnames': {
-      en: '/pfadnamen',
+    '/categories': {
+      en: '/categories',
+    },
+    '/categories/[name]': {
+      en: '/categories/[name]',
+    },
+    '/recipe/[name]': {
+      en: '/recipe/[name]',
     },
   },
 })

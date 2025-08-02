@@ -1,9 +1,10 @@
 import { setRequestLocale } from 'next-intl/server'
-import { Locale, useTranslations } from 'next-intl'
+import { Locale } from 'next-intl'
 
 import { use } from 'react'
 import { SeasonalCategories } from '@/components/SeasonalCategories'
 import { PopularCategories } from '@/components/PopularCategories'
+import { Header } from '@/components/header'
 
 type Props = {
   params: Promise<{ locale: Locale }>
@@ -14,10 +15,9 @@ export default function IndexPage({ params }: Props) {
 
   setRequestLocale(locale)
 
-  const t = useTranslations('btn')
-
   return (
     <>
+      {/* <Header /> */}
       {/* <Meta /> */}
       {/* <Intro /> */}
       {/* <Services /> */}

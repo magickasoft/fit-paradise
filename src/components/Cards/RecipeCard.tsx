@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import Link from 'next/link'
 
-// import { minDevice } from '../../styles'
+import { minDevice } from '@/styles/device'
+import { Link } from '@/i18n/navigation'
 
 const Title = styled.div`
   font-size: 16px;
@@ -10,6 +10,10 @@ const Title = styled.div`
   font-weight: 600;
   color: #333;
   transition: all 0.3s ease;
+
+  @media ${minDevice.laptop} {
+    font-size: 18px;
+  }
 `
 
 const Description = styled.div`
@@ -119,11 +123,13 @@ export const RecipeCard = ({
 }: RecipeCardProps) => {
   return (
     <Link
-      href={`/recipe/${name}`}
+      href={{
+        pathname: '/recipe/[name]',
+        params: { name },
+      }}
+      locale="ru"
       style={{ textDecoration: 'none', color: 'inherit' }}
       aria-label={`Рецепт: ${title}`}
-      passHref
-      legacyBehavior
     >
       <Card role="link" tabIndex={0} variant={variant}>
         <ImageBlock>

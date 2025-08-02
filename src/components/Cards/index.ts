@@ -1,4 +1,4 @@
 export { ClientCard } from './client'
-export { DetailCard } from './detail-cars'
+export { DetailCard } from './DetailCards'
 export { ServiceCard } from './service'
 export { TechCard } from './tech'

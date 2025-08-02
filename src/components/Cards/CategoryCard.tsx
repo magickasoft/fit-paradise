@@ -2,7 +2,8 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
-import Link from 'next/link'
+
+import { Link } from '@/i18n/navigation'
 
 type VariantType = 'large' | 'medium' | 'small' | 'slider'
 
@@ -26,8 +27,6 @@ const ContentHeight: Record<VariantType, number> = {
   small: 120,
   slider: 220,
 }
-
-// Styled components
 
 const Card = styled.div<{ color?: string; variant: VariantType }>`
   background-color: ${({ color }) => color || '#f7f5f6'};
@@ -106,8 +105,6 @@ const Content = styled.div<{ variant: VariantType }>`
   }
 `
 
-// Component
-
 export const CategoryCard = ({
   img,
   label,
@@ -122,15 +119,21 @@ export const CategoryCard = ({
   variant?: VariantType
 }) => {
   return (
-    // <Link href={`/categories/${name}`} passHref legacyBehavior>
-    <Card color={color} variant={variant}>
-      <Content className="card-image" variant={variant}>
-        {img && <Image width={ContentWidth[variant]} height={ContentHeight[variant]} src={img} alt="icon" priority />}
-      </Content>
-      <Title className="card-title" variant={variant}>
-        {label}
-      </Title>
-    </Card>
-    // </Link>
+    <Link
+      href={{
+        pathname: '/categories/[name]',
+        params: { name },
+      }}
+      locale="ru"
+    >
+      <Card role="link" color={color} variant={variant}>
+        <Content className="card-image" variant={variant}>
+          {img && <Image width={ContentWidth[variant]} height={ContentHeight[variant]} src={img} alt="icon" priority />}
+        </Content>
+        <Title className="card-title" variant={variant}>
+          {label}
+        </Title>
+      </Card>
+    </Link>
   )
 }
