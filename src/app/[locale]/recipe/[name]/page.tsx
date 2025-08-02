@@ -14,7 +14,7 @@ const HeaderContainer = styled.div`
   max-width: 1800px;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   overflow: hidden;
 `
 
@@ -25,7 +25,7 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: stretch;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     flex-direction: column;
     max-height: none;
   }
@@ -40,7 +40,7 @@ const TitleContainer = styled.article`
   padding: 20px;
   border-radius: 8px 0 0 8px;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-radius: 8px 8px 0 0;
     padding: 16px;
@@ -56,7 +56,7 @@ const ImageContainer = styled.article`
   overflow: hidden;
   border-radius: 0 8px 0 0;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-radius: 0 0 8px 8px;
     aspect-ratio: 1.5 / 1;
@@ -91,7 +91,7 @@ const Title = styled.h1`
   line-height: 1.2;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     font-size: 1.5rem;
   }
@@ -104,7 +104,7 @@ const Description = styled.article`
   line-height: 1.6;
   text-align: justify;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     font-size: 0.75rem;
   }
@@ -114,11 +114,10 @@ const InfoContainer = styled.article`
   width: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     flex-direction: row;
     gap: 8px;
   }
@@ -137,7 +136,7 @@ const DetailsContainer = styled.section`
   line-height: 1.6;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     flex-direction: column;
     padding: 16px;
   }
@@ -149,7 +148,7 @@ const IngredientsContainer = styled.section`
   flex-direction: column;
   text-align: start;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #ddd;
@@ -165,7 +164,7 @@ const EquipmentsContainer = styled.section`
   flex-direction: column;
   text-align: start;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-left: none;
     padding-left: 0;
@@ -192,7 +191,7 @@ const DetailsCardsContainer = styled.section<{
   justify-content: ${props => props.$justifyContent || 'flex-start'};
   overflow-x: auto;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     height: auto;
   }
 `
@@ -215,7 +214,7 @@ const RecipeStep = styled.article`
   line-height: 1.6;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     padding: 15px;
     margin-bottom: 10px;
   }
@@ -227,7 +226,7 @@ const RecipeTitle = styled.h2`
   margin-bottom: 10px;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     margin-bottom: 5px;
     font-size: 1.2rem;
   }
@@ -241,7 +240,7 @@ const RecipeDescription = styled.article`
   color: #333;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     font-size: 0.85rem;
   }

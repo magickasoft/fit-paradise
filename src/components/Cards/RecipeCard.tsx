@@ -57,12 +57,12 @@ const Card = styled.div<{ variant: 'base' | 'full' }>`
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgb(0, 0, 0, 0.06);
 
   &:hover {
     transform: translateY(-4px) scale(1.01);
     background-color: #f5f3f3;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgb(0, 0, 0, 0.15);
 
     .card-title {
       font-size: 20px;

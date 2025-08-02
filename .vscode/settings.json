@@ -5,8 +5,12 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": true
   },
+  "stylelint.validate": ["css", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "css.validate": false,
+  "scss.validate": false,
   "eslint.validate": ["javascript"],
   "eslint.enable": true,
   "eslint.format.enable": true,
@@ -15,5 +19,14 @@
   "i18n-ally.keystyle": "nested",
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.words": ["Timeframe", "useportfolio"]
+  "cSpell.words": ["Timeframe", "useportfolio"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

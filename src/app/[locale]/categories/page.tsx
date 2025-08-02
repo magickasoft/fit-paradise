@@ -9,15 +9,15 @@ import { CategoryCard } from '@/components/Cards/CategoryCard'
 import { PageWrapper } from '@/components/PageWrapper'
 
 const Container = styled.section`
-  background-color: #ffffff;
+  background-color: #fff;
   min-height: 300px;
   max-width: 1920px;
   overflow: hidden;
-  padding: 0px 100px;
+  padding: 0 100px;
   margin-bottom: 40px;
 
   @media ${maxDevice.tablet} {
-    padding: 0 0 20px 0;
+    padding: 0 0 20px;
   }
 `
 

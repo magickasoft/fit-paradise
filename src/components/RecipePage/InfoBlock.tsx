@@ -18,7 +18,7 @@ const InfoBlockTitle = styled.span`
   font-size: 0.9rem;
   color: #999;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: 0.8rem;
   }
 `
@@ -33,7 +33,7 @@ const InfoBlockValue = styled.span`
   align-items: center;
   gap: 8px;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: 0.9rem;
   }
 `

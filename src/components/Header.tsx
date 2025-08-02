@@ -9,7 +9,7 @@ import { Link } from '@/i18n/navigation'
 // import { ScrollIndicator } from './scrollIndicator'
 
 const Container = styled.header<{ $scrolled: boolean }>`
-  background: #ffffff;
+  background: #fff;
   z-index: 9998;
   position: fixed;
   top: 0;
@@ -27,7 +27,6 @@ const Container = styled.header<{ $scrolled: boolean }>`
     padding: 0 30px;
     height: 3.5rem;
   }
-
   border-bottom: ${({ $scrolled }) => ($scrolled ? '1px solid #d0d0d0' : '1px solid #ffffff')};
 `
 
@@ -50,7 +49,7 @@ const CenterBlock = styled.nav`
   a {
     font-size: 20px;
     text-decoration: none;
-    color: #333333;
+    color: #333;
     transition: color 0.2s ease;
 
     &:hover {

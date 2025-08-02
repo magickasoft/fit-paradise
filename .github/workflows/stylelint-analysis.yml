@@ -11,8 +11,8 @@ on:
     - cron: 0 0 * * 1 # Every Monday at 00:00 UTC
 
 jobs:
-  prettier:
-    name: Prettier
+  stylelint:
+    name: Stylelint
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,13 +29,13 @@ jobs:
       - name: Install Dependencies
         run: bun install --ci
 
-      - name: Run Prettier Check
-        id: prettier
-        run: bun run prettier
+      - name: Run Stylelint Check
+        id: stylelint
+        run: bun run stylelint
 
-      - name: Prettier Failure Handler
-        if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
+      - name: Stylelint Failure Handler
+        if: ${{ failure() && steps.stylelint.conclusion == 'failure' }}
         run: |
-          echo "::error::Prettier found formatting issues!"
-          echo "Run 'bun run prettier:fix' locally to resolve issues"
+          echo "::error::Stylelint found formatting issues!"
+          echo "Run 'bun run stylelint:fix' locally to resolve issues"
           exit 1

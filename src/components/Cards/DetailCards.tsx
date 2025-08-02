@@ -14,7 +14,7 @@ const Card = styled.div<{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px 10px 10px 10px;
+  padding: 20px 10px 10px;
   border-radius: 8px;
   gap: 10px;
   background-color: ${({ $backgroundColor }) => $backgroundColor || '#ffffff'};
@@ -37,7 +37,7 @@ const Image = styled.img`
 const NoImage = styled.div`
   width: 80px;
   height: 80px;
-  background-color: #dddddd;
+  background-color: #ddd;
   border-radius: 50%;
   display: flex;
   justify-content: center;

@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  margin: 0px;
+  margin: 0;
 `
 
 const Text = styled.div`
