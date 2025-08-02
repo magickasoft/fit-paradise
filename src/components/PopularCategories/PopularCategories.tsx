@@ -103,13 +103,13 @@ export const PopularCategories = () => {
       <Wrapper>
         <Title>ПОПУЛЯРНЫЕ КАТЕГОРИИ</Title>
 
-        {CATEGORIES_ARR.map(({ name, ...category }) => {
+        {CATEGORIES_ARR.map(({ name, key, ...category }) => {
           const recipes = RECIPES_OBJ[name]?.slice(0, 10) || []
 
           return (
-            <CategoryRow key={name}>
+            <CategoryRow key={key || name}>
               <CategoryCardWrapper>
-                <CategoryCard name={name} {...category} variant="slider" />
+                <CategoryCard key={key || name} name={name} {...category} variant="slider" />
               </CategoryCardWrapper>
 
               {recipes.length > 0 && (

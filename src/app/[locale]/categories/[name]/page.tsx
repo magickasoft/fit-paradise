@@ -3,7 +3,7 @@
 import { PageWrapper } from '@/components/PageWrapper'
 import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
 import { RecipeCard } from '@/components/Cards/RecipeCard'
-
+import { use } from 'react' // Import the use hook
 import styled from 'styled-components'
 import { useIsMobile } from '@/components/hooks/useIsMobile.client'
 
@@ -20,8 +20,9 @@ const Cards = styled.div`
   overflow-x: hidden;
 `
 
-export default function CategoryPage({ params }: { params: { name: string } }) {
-  const recipes = params.name ? RECIPES_OBJ[params.name] : []
+export default function CategoryPage({ params }: { params: Promise<{ name: string }> }) {
+  const resolvedParams = use(params) // Unwrap the Promise
+  const recipes = resolvedParams.name ? RECIPES_OBJ[resolvedParams.name] : []
   const isMobile = useIsMobile()
   const variant = isMobile ? 'full' : 'base'
 

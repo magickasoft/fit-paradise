@@ -9,6 +9,7 @@ import { DetailCard } from '@/components/Cards'
 
 import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
 import { NoList } from '@/components/NoList'
+import { use } from 'react'
 
 const HeaderContainer = styled.div`
   max-width: 1800px;
@@ -247,10 +248,10 @@ const RecipeDescription = styled.article`
   }
 `
 
-const RecipePage = ({ params }: { params: { name: string } }) => {
-  console.log('RecipePage params:', params)
+const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
+  const resolvedParams = use(params)
 
-  const recipe = findByKey(params.name) || null
+  const recipe = findByKey(resolvedParams.name) || null
 
   return (
     <main>
