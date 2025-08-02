@@ -1,5 +1,5 @@
-import { EQUIPMENTS } from '../equipments'
-import { INGREDIENTS } from '../ingredients'
+import { EQUIPMENTS } from '../equipments';
+import { INGREDIENTS } from '../ingredients';
 
 export const BREAKFAST = [
   {
@@ -62,7 +62,13 @@ export const BREAKFAST = [
         count: 0.5,
       },
     ],
-    equipments: [EQUIPMENTS.pan, EQUIPMENTS.spatula, EQUIPMENTS.bowl, EQUIPMENTS.whisk, EQUIPMENTS.plate],
+    equipments: [
+      EQUIPMENTS.pan,
+      EQUIPMENTS.spatula,
+      EQUIPMENTS.bowl,
+      EQUIPMENTS.whisk,
+      EQUIPMENTS.plate,
+    ],
     cookingRecipe: [
       {
         img: null,
@@ -323,7 +329,7 @@ export const BREAKFAST = [
       },
     ],
   },
-]
+];
 
 // {
 //   key: 'scrambled-eggs-with-sausages-and-beans',

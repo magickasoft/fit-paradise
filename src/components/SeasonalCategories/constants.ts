@@ -13,4 +13,4 @@ export const SEASONAL_CATEGORIES_ARR = [
     img: '/static/seasonal-categories/summer-menu.png',
     color: '#C1E1C1',
   },
-]
+];

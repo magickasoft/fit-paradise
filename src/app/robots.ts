@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next'
-import { DOMAIN } from '../process.env/domain'
+import type { MetadataRoute } from 'next';
+import { DOMAIN } from '../process.env/domain';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -11,5 +11,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [`https://${DOMAIN}/sitemap.xml`],
-  }
+  };
 }

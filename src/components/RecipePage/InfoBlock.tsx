@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const InfoContainer = styled.p`
   font-size: 1rem;
@@ -12,16 +12,16 @@ const InfoContainer = styled.p`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4px;
-`
+`;
 
 const InfoBlockTitle = styled.span`
   font-size: 0.9rem;
   color: #999;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: 0.8rem;
   }
-`
+`;
 
 const InfoBlockValue = styled.span`
   font-size: 1.1rem;
@@ -33,12 +33,20 @@ const InfoBlockValue = styled.span`
   align-items: center;
   gap: 8px;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: 0.9rem;
   }
-`
+`;
 
-export const InfoBlock = ({ name, value, gauge }: { name: string; value: number; gauge: string }) => {
+export const InfoBlock = ({
+  name,
+  value,
+  gauge,
+}: {
+  name: string;
+  value: number;
+  gauge: string;
+}) => {
   return (
     <InfoContainer>
       <InfoBlockTitle>{name}</InfoBlockTitle>
@@ -47,5 +55,5 @@ export const InfoBlock = ({ name, value, gauge }: { name: string; value: number;
         {gauge}
       </InfoBlockValue>
     </InfoContainer>
-  )
-}
+  );
+};

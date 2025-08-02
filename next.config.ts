@@ -1,13 +1,13 @@
-import type { NextConfig } from 'next'
-import createNextIntlPlugin from 'next-intl/plugin'
+import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const isDevelopment = process.env.NODE_ENV === 'development'
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 const withNextIntl = createNextIntlPlugin({
   experimental: {
     createMessagesDeclaration: './messages/ru.json',
   },
-})
+});
 
 const config: NextConfig = {
   compiler: {
@@ -19,6 +19,6 @@ const config: NextConfig = {
       minify: true,
     },
   },
-}
+};
 
-export default withNextIntl(config)
+export default withNextIntl(config);

@@ -1,18 +1,18 @@
-import { setRequestLocale } from 'next-intl/server'
-import { Locale } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server';
+import { Locale } from 'next-intl';
 
-import { use } from 'react'
-import { SeasonalCategories } from '@/components/SeasonalCategories'
-import { PopularCategories } from '@/components/PopularCategories'
+import { use } from 'react';
+import { SeasonalCategories } from '@/components/SeasonalCategories';
+import { PopularCategories } from '@/components/PopularCategories';
 
 type Props = {
-  params: Promise<{ locale: Locale }>
-}
+  params: Promise<{ locale: Locale }>;
+};
 
 export default function IndexPage({ params }: Props) {
-  const { locale } = use(params)
+  const { locale } = use(params);
 
-  setRequestLocale(locale)
+  setRequestLocale(locale);
 
   return (
     <>
@@ -22,5 +22,5 @@ export default function IndexPage({ params }: Props) {
       <SeasonalCategories />
       <PopularCategories />
     </>
-  )
+  );
 }

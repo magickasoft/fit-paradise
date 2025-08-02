@@ -1,25 +1,25 @@
-'use client'
+'use client';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { RecipeCard } from '../Cards/RecipeCard'
-import { CATEGORIES_ARR } from './constants'
-import { CategoryCard } from '../Cards/CategoryCard'
-import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
-import { maxDevice } from '@/styles/device'
+import { RecipeCard } from '../Cards/RecipeCard';
+import { CATEGORIES_ARR } from './constants';
+import { CategoryCard } from '../Cards/CategoryCard';
+import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes';
+import { maxDevice } from '@/styles/device';
 
 const Container = styled.section`
-  background-color: #ffffff;
+  background-color: #fff;
   min-height: 300px;
   max-width: 1920px;
   overflow: hidden;
-  padding: 0px 100px;
+  padding: 0 100px;
   margin: 0 auto 40px;
 
   @media ${maxDevice.tablet} {
-    padding: 0 0 20px 0;
+    padding: 0 0 20px;
   }
-`
+`;
 
 const Wrapper = styled.div`
   padding: 10px;
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   @media ${maxDevice.tablet} {
     padding: 16px 12px;
   }
-`
+`;
 
 const Title = styled.h2`
   margin-bottom: 24px;
@@ -37,7 +37,7 @@ const Title = styled.h2`
     font-size: 20px;
     text-align: center;
   }
-`
+`;
 
 const CategoryRow = styled.div`
   display: flex;
@@ -49,7 +49,7 @@ const CategoryRow = styled.div`
     flex-direction: column;
     gap: 4px;
   }
-`
+`;
 
 const CategoryCardWrapper = styled.div`
   flex-shrink: 0;
@@ -57,7 +57,7 @@ const CategoryCardWrapper = styled.div`
   @media ${maxDevice.tablet} {
     width: 100%;
   }
-`
+`;
 
 const RecipesScroll = styled.div`
   display: flex;
@@ -74,7 +74,7 @@ const RecipesScroll = styled.div`
     background: #ccc;
     border-radius: 3px;
   }
-`
+`;
 
 export const PopularCategories = () => {
   return (
@@ -83,7 +83,7 @@ export const PopularCategories = () => {
         <Title>ПОПУЛЯРНЫЕ КАТЕГОРИИ</Title>
 
         {CATEGORIES_ARR.map(({ name, key, ...category }) => {
-          const recipes = RECIPES_OBJ[name]?.slice(0, 10) || []
+          const recipes = RECIPES_OBJ[name]?.slice(0, 10) || [];
 
           return (
             <CategoryRow key={key || name}>
@@ -99,9 +99,9 @@ export const PopularCategories = () => {
                 </RecipesScroll>
               )}
             </CategoryRow>
-          )
+          );
         })}
       </Wrapper>
     </Container>
-  )
-}
+  );
+};

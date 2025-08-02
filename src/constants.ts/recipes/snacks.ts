@@ -1,5 +1,5 @@
-import { EQUIPMENTS } from '../equipments'
-import { INGREDIENTS } from '../ingredients'
+import { EQUIPMENTS } from '../equipments';
+import { INGREDIENTS } from '../ingredients';
 
 export const SNACKS = [
   {
@@ -189,4 +189,4 @@ export const SNACKS = [
       },
     ],
   },
-]
+];

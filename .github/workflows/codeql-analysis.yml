@@ -1,4 +1,4 @@
-name: 'Code Analysis'
+name: Code Analysis
 
 permissions: read-all
 
@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript']
+        language: [javascript]
 
     steps:
       - name: Checkout repository

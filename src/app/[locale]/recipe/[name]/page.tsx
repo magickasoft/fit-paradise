@@ -1,22 +1,22 @@
-'use client'
+'use client';
 
-import styled from 'styled-components'
-import Head from 'next/head'
-import { InfoBlock } from '@/components/RecipePage'
-import { PageWrapper } from '@/components/PageWrapper'
-import { findByKey } from '@/helpers/findByKey'
-import { DetailCard } from '@/components/Cards'
+import styled from 'styled-components';
+import Head from 'next/head';
+import { InfoBlock } from '@/components/RecipePage';
+import { PageWrapper } from '@/components/PageWrapper';
+import { findByKey } from '@/helpers/findByKey';
+import { DetailCard } from '@/components/Cards';
 
-import { NoList } from '@/components/NoList'
-import { use } from 'react'
+import { NoList } from '@/components/NoList';
+import { use } from 'react';
 
 const HeaderContainer = styled.div`
   max-width: 1800px;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   overflow: hidden;
-`
+`;
 
 const Header = styled.header`
   display: flex;
@@ -25,11 +25,11 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: stretch;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     flex-direction: column;
     max-height: none;
   }
-`
+`;
 
 const TitleContainer = styled.article`
   width: 60%;
@@ -40,13 +40,13 @@ const TitleContainer = styled.article`
   padding: 20px;
   border-radius: 8px 0 0 8px;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-radius: 8px 8px 0 0;
     padding: 16px;
     order: 2;
   }
-`
+`;
 
 const ImageContainer = styled.article`
   width: 40%;
@@ -56,20 +56,20 @@ const ImageContainer = styled.article`
   overflow: hidden;
   border-radius: 0 8px 0 0;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-radius: 0 0 8px 8px;
     aspect-ratio: 1.5 / 1;
     order: 1;
   }
-`
+`;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0 8px 0 0;
-`
+`;
 
 const Placeholder = styled.article`
   width: 100%;
@@ -83,7 +83,7 @@ const Placeholder = styled.article`
   align-items: center;
   justify-content: center;
   border-radius: 0 8px 0 0;
-`
+`;
 
 const Title = styled.h1`
   width: 80%;
@@ -91,11 +91,11 @@ const Title = styled.h1`
   line-height: 1.2;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     font-size: 1.5rem;
   }
-`
+`;
 
 const Description = styled.article`
   width: 80%;
@@ -104,25 +104,24 @@ const Description = styled.article`
   line-height: 1.6;
   text-align: justify;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     font-size: 0.75rem;
   }
-`
+`;
 
 const InfoContainer = styled.article`
   width: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     flex-direction: row;
     gap: 8px;
   }
-`
+`;
 
 const DetailsContainer = styled.section`
   width: 100%;
@@ -137,11 +136,11 @@ const DetailsContainer = styled.section`
   line-height: 1.6;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     flex-direction: column;
     padding: 16px;
   }
-`
+`;
 
 const IngredientsContainer = styled.section`
   width: 100%;
@@ -149,7 +148,7 @@ const IngredientsContainer = styled.section`
   flex-direction: column;
   text-align: start;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #ddd;
@@ -157,7 +156,7 @@ const IngredientsContainer = styled.section`
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
-`
+`;
 
 const EquipmentsContainer = styled.section`
   width: 100%;
@@ -165,43 +164,43 @@ const EquipmentsContainer = styled.section`
   flex-direction: column;
   text-align: start;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     border-left: none;
     padding-left: 0;
     text-align: start;
   }
-`
+`;
 
 const DetailsTitle = styled.h2`
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
-`
+`;
 
 const DetailsCardsContainer = styled.section<{
-  width?: string
-  $justifyContent?: string
+  width?: string;
+  $justifyContent?: string;
 }>`
-  width: ${props => props.width || '100%'};
+  width: ${(props) => props.width || '100%'};
   display: flex;
   flex-direction: row;
   gap: 10px;
   height: 220px;
-  justify-content: ${props => props.$justifyContent || 'flex-start'};
+  justify-content: ${(props) => props.$justifyContent || 'flex-start'};
   overflow-x: auto;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     height: auto;
   }
-`
+`;
 
 const RecipeStepsContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const RecipeStep = styled.article`
   width: 100%;
@@ -215,11 +214,11 @@ const RecipeStep = styled.article`
   line-height: 1.6;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     padding: 15px;
     margin-bottom: 10px;
   }
-`
+`;
 
 const RecipeTitle = styled.h2`
   font-size: 1.5rem;
@@ -227,11 +226,11 @@ const RecipeTitle = styled.h2`
   margin-bottom: 10px;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     margin-bottom: 5px;
     font-size: 1.2rem;
   }
-`
+`;
 
 const RecipeDescription = styled.article`
   width: 80%;
@@ -241,16 +240,16 @@ const RecipeDescription = styled.article`
   color: #333;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 100%;
     font-size: 0.85rem;
   }
-`
+`;
 
 const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
-  const resolvedParams = use(params)
+  const resolvedParams = use(params);
 
-  const recipe = findByKey(resolvedParams.name) || null
+  const recipe = findByKey(resolvedParams.name) || null;
 
   return (
     <main>
@@ -266,14 +265,23 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
         <meta name="twitter:description" content={recipe?.metaSeo?.twitterDescription || ''} />
         <meta name="twitter:image" content={recipe?.metaSeo?.twitterImage || ''} />
         <meta name="twitter:url" content={recipe?.metaSeo?.twitterUrl || ''} />
-        <meta name="twitter:card" content={recipe?.metaSeo?.['twitter:card'] || 'summary_large_image'} />
+        <meta
+          name="twitter:card"
+          content={recipe?.metaSeo?.['twitter:card'] || 'summary_large_image'}
+        />
         <link rel="canonical" href={recipe?.metaSeo?.canonicalUrl || ''} />
         <meta name="robots" content={recipe?.metaSeo?.robots || 'index, follow'} />
         <meta name="googlebot" content={recipe?.metaSeo?.googlebot || 'index, follow'} />
         <meta name="yandex" content={recipe?.metaSeo?.yandex || 'index, follow'} />
         <meta name="selfwork" content={recipe?.metaSeo?.selfwork || 'index, follow'} />
-        <meta name="max-image-preview" content={recipe?.metaSeo?.['max-image-preview'] || 'large'} />
-        <meta name="viewport" content={recipe?.metaSeo?.viewport || 'width=device-width, initial-scale=1'} />
+        <meta
+          name="max-image-preview"
+          content={recipe?.metaSeo?.['max-image-preview'] || 'large'}
+        />
+        <meta
+          name="viewport"
+          content={recipe?.metaSeo?.viewport || 'width=device-width, initial-scale=1'}
+        />
         <meta name="author" content={recipe?.metaSeo?.author || 'Повар-ешка'} />
         <meta name="theme-color" content={recipe?.metaSeo?.['theme-color'] || '#ffffff'} />
       </Head>
@@ -287,13 +295,21 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
                 <Title>{recipe.title}</Title>
                 <Description>{recipe.description}</Description>
                 <InfoContainer>
-                  {recipe.preparation && <InfoBlock name="Подготовка" value={recipe.preparation} gauge="мин" />}
+                  {recipe.preparation && (
+                    <InfoBlock name="Подготовка" value={recipe.preparation} gauge="мин" />
+                  )}
                   <InfoBlock name="Готовка" value={recipe.time} gauge="мин" />
-                  {recipe.calories && <InfoBlock name="Калорийность" value={recipe.calories} gauge="ккал" />}
+                  {recipe.calories && (
+                    <InfoBlock name="Калорийность" value={recipe.calories} gauge="ккал" />
+                  )}
                 </InfoContainer>
               </TitleContainer>
               <ImageContainer>
-                {recipe.img ? <Image src={recipe.img} alt={recipe.name} /> : <Placeholder>Нет изображения</Placeholder>}
+                {recipe.img ? (
+                  <Image src={recipe.img} alt={recipe.name} />
+                ) : (
+                  <Placeholder>Нет изображения</Placeholder>
+                )}
               </ImageContainer>
             </Header>
           )}
@@ -305,11 +321,15 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
                 <DetailsTitle>Ингредиенты</DetailsTitle>
                 {recipe.ingredients.length ? (
                   <DetailsCardsContainer>
-                    {recipe.ingredients.map(ingredient => (
+                    {recipe.ingredients.map((ingredient) => (
                       <DetailCard
                         key={ingredient.name}
                         name={ingredient.name}
-                        text={ingredient.count && ingredient.gauge ? `${ingredient.count} ${ingredient.gauge}` : ''}
+                        text={
+                          ingredient.count && ingredient.gauge
+                            ? `${ingredient.count} ${ingredient.gauge}`
+                            : ''
+                        }
                         img={ingredient.img}
                       />
                     ))}
@@ -323,8 +343,13 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
                 <DetailsTitle>Оборудование</DetailsTitle>
                 {recipe.equipments.length ? (
                   <DetailsCardsContainer>
-                    {recipe.equipments.map(equipment => (
-                      <DetailCard key={equipment.name} name={equipment.name} img={equipment.img} variant="short" />
+                    {recipe.equipments.map((equipment) => (
+                      <DetailCard
+                        key={equipment.name}
+                        name={equipment.name}
+                        img={equipment.img}
+                        variant="short"
+                      />
                     ))}
                   </DetailsCardsContainer>
                 ) : (
@@ -339,11 +364,15 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
                   <RecipeDescription>{step.description}</RecipeDescription>
                   {step.ingredients?.length > 0 && (
                     <DetailsCardsContainer width="100%" $justifyContent="center">
-                      {step.ingredients.map(ingredient => (
+                      {step.ingredients.map((ingredient) => (
                         <DetailCard
                           key={ingredient.name}
                           name={ingredient.name}
-                          text={ingredient.count && ingredient.gauge ? `${ingredient.count} ${ingredient.gauge}` : ''}
+                          text={
+                            ingredient.count && ingredient.gauge
+                              ? `${ingredient.count} ${ingredient.gauge}`
+                              : ''
+                          }
                           img={ingredient.img}
                           backgroundColor="#f9f9f9"
                         />
@@ -358,11 +387,11 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
       </PageWrapper>
 
       <section style={{ display: 'none' }}>
-        {recipe?.searchRequests?.map(searchRequest => (
+        {recipe?.searchRequests?.map((searchRequest) => (
           <p key={searchRequest}>{searchRequest}</p>
         ))}
       </section>
     </main>
-  )
-}
-export default RecipePage
+  );
+};
+export default RecipePage;

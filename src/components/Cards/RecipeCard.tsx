@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import styled from 'styled-components'
-import Image from 'next/image'
+import styled from 'styled-components';
+import Image from 'next/image';
 
-import { minDevice } from '@/styles/device'
-import { Link } from '@/i18n/navigation'
+import { minDevice } from '@/styles/device';
+import { Link } from '@/i18n/navigation';
 
 const Title = styled.div`
   font-size: 16px;
@@ -16,7 +16,7 @@ const Title = styled.div`
   @media ${minDevice.laptop} {
     font-size: 18px;
   }
-`
+`;
 
 const Description = styled.div`
   font-size: 12px;
@@ -28,7 +28,7 @@ const Description = styled.div`
   -webkit-line-clamp: 3;
   overflow: hidden;
   transition: all 0.3s ease;
-`
+`;
 
 const Characteristic = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const Characteristic = styled.div`
   line-height: 1.2;
   color: #444;
   transition: all 0.3s ease;
-`
+`;
 
 const Card = styled.div<{ variant: 'base' | 'full' }>`
   background-color: #fdfcfc;
@@ -57,12 +57,12 @@ const Card = styled.div<{ variant: 'base' | 'full' }>`
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgb(0, 0, 0, 0.06);
 
   &:hover {
     transform: translateY(-4px) scale(1.01);
     background-color: #f5f3f3;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgb(0, 0, 0, 0.15);
 
     .card-title {
       font-size: 20px;
@@ -79,7 +79,7 @@ const Card = styled.div<{ variant: 'base' | 'full' }>`
       opacity: 0.5;
     }
   }
-`
+`;
 
 const ImageBlock = styled.div`
   position: relative;
@@ -89,7 +89,7 @@ const ImageBlock = styled.div`
   overflow: hidden;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-`
+`;
 
 const Content = styled.div`
   display: flex;
@@ -98,20 +98,20 @@ const Content = styled.div`
   justify-content: flex-start;
   padding: 20px;
   flex: 1;
-`
+`;
 
 type RecipeCardProps = {
-  name: string
-  img: string | null
-  title: string
-  description: string
-  time: number
-  level: number
-  rating: number
-  variant?: 'base' | 'full'
-}
+  name: string;
+  img: string | null;
+  title: string;
+  description: string;
+  time: number;
+  level: number;
+  rating: number;
+  variant?: 'base' | 'full';
+};
 
-const levels = ['Легко', 'Средне', 'Сложно']
+const levels = ['Легко', 'Средне', 'Сложно'];
 
 export const RecipeCard = ({
   name,
@@ -136,7 +136,13 @@ export const RecipeCard = ({
       <Card role="link" tabIndex={0} variant={variant}>
         <ImageBlock>
           {img ? (
-            <Image src={img} alt={`Изображение для ${title}`} fill style={{ objectFit: 'cover' }} priority />
+            <Image
+              src={img}
+              alt={`Изображение для ${title}`}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
           ) : (
             <div
               style={{
@@ -166,5 +172,5 @@ export const RecipeCard = ({
         </Content>
       </Card>
     </Link>
-  )
-}
+  );
+};

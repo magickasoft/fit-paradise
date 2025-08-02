@@ -1,5 +1,5 @@
-import { EQUIPMENTS } from '../equipments'
-import { INGREDIENTS } from '../ingredients'
+import { EQUIPMENTS } from '../equipments';
+import { INGREDIENTS } from '../ingredients';
 
 export const DINNER = [
   {
@@ -436,13 +436,15 @@ export const DINNER = [
       {
         img: null,
         video: null,
-        description: 'Отварите картофель и яйца до готовности. Дайте остыть, затем аккуратно очистите.',
+        description:
+          'Отварите картофель и яйца до готовности. Дайте остыть, затем аккуратно очистите.',
         ingredients: [],
       },
       {
         img: null,
         video: null,
-        description: 'Нарежьте кубиками варёную колбасу, картофель, яйца и огурцы. Зелень мелко порубите ножом.',
+        description:
+          'Нарежьте кубиками варёную колбасу, картофель, яйца и огурцы. Зелень мелко порубите ножом.',
         ingredients: [],
       },
       {
@@ -454,4 +456,4 @@ export const DINNER = [
       },
     ],
   },
-]
+];

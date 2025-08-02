@@ -1,5 +1,5 @@
-import { EQUIPMENTS } from '../equipments'
-import { INGREDIENTS } from '../ingredients'
+import { EQUIPMENTS } from '../equipments';
+import { INGREDIENTS } from '../ingredients';
 
 export const SUMMER_MENU = [
   {
@@ -95,7 +95,11 @@ export const SUMMER_MENU = [
         video: null,
         description:
           'Огурцы и помидоры нарежьте крупными дольками, чтобы сохранить их сочность. Красный лук нарежьте тонкими кольцами. Переложите всё в глубокую миску.',
-        ingredients: [{ ...INGREDIENTS.tomato }, { ...INGREDIENTS.cucumber }, { ...INGREDIENTS.redOnion }],
+        ingredients: [
+          { ...INGREDIENTS.tomato },
+          { ...INGREDIENTS.cucumber },
+          { ...INGREDIENTS.redOnion },
+        ],
       },
       {
         img: null,
@@ -114,7 +118,8 @@ export const SUMMER_MENU = [
       {
         img: null,
         video: null,
-        description: 'Залейте овощи получившейся заправкой и аккуратно перемешайте, чтобы не повредить кусочки.',
+        description:
+          'Залейте овощи получившейся заправкой и аккуратно перемешайте, чтобы не повредить кусочки.',
         ingredients: [],
       },
       {
@@ -129,8 +134,12 @@ export const SUMMER_MENU = [
         video: null,
         description:
           'Выложите сверху крупные кусочки феты. Посыпьте сушёным орегано и слегка сбрызните ещё немного оливковым маслом для аромата.',
-        ingredients: [{ ...INGREDIENTS.fetaCheese }, { ...INGREDIENTS.oreganoDry }, { ...INGREDIENTS.oliveOil }],
+        ingredients: [
+          { ...INGREDIENTS.fetaCheese },
+          { ...INGREDIENTS.oreganoDry },
+          { ...INGREDIENTS.oliveOil },
+        ],
       },
     ],
   },
-]
+];

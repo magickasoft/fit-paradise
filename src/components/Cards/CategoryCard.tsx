@@ -1,32 +1,32 @@
-'use client'
+'use client';
 
-import styled from 'styled-components'
-import Image from 'next/image'
+import styled from 'styled-components';
+import Image from 'next/image';
 
-import { Link } from '@/i18n/navigation'
+import { Link } from '@/i18n/navigation';
 
-type VariantType = 'large' | 'medium' | 'small' | 'slider'
+type VariantType = 'large' | 'medium' | 'small' | 'slider';
 
 const CardHeight: Record<VariantType, string> = {
   large: '250px',
   medium: '200px',
   small: '180px',
   slider: '290px',
-}
+};
 
 const ContentWidth: Record<VariantType, number> = {
   large: 240,
   medium: 180,
   small: 140,
   slider: 240,
-}
+};
 
 const ContentHeight: Record<VariantType, number> = {
   large: 220,
   medium: 160,
   small: 120,
   slider: 220,
-}
+};
 
 const Card = styled.div<{ color?: string; variant: VariantType }>`
   background-color: ${({ color }) => color || '#f7f5f6'};
@@ -50,7 +50,7 @@ const Card = styled.div<{ color?: string; variant: VariantType }>`
   &:hover {
     opacity: 1;
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgb(0, 0, 0, 0.15);
 
     .card-title {
       font-weight: 700;
@@ -62,11 +62,12 @@ const Card = styled.div<{ color?: string; variant: VariantType }>`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     min-width: 220px;
-    height: ${({ variant }) => (variant === 'slider' ? '260px' : variant === 'large' ? '220px' : '180px')};
+    height: ${({ variant }) =>
+      variant === 'slider' ? '260px' : variant === 'large' ? '220px' : '180px'};
   }
-`
+`;
 
 const Title = styled.div<{ variant: VariantType }>`
   font-size: ${({ variant }) => (variant === 'large' ? '14px' : '12px')};
@@ -81,10 +82,10 @@ const Title = styled.div<{ variant: VariantType }>`
     transform 0.3s ease,
     font-weight 0.3s ease;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     font-size: ${({ variant }) => (variant === 'large' ? '13px' : '11px')};
   }
-`
+`;
 
 const Content = styled.div<{ variant: VariantType }>`
   display: flex;
@@ -98,12 +99,12 @@ const Content = styled.div<{ variant: VariantType }>`
     height: ${({ variant }) => ContentHeight[variant]}px;
     object-fit: contain;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       width: ${({ variant }) => ContentWidth[variant] * 0.8}px;
       height: ${({ variant }) => ContentHeight[variant] * 0.8}px;
     }
   }
-`
+`;
 
 export const CategoryCard = ({
   img,
@@ -112,11 +113,11 @@ export const CategoryCard = ({
   name,
   variant = 'large',
 }: {
-  img: string | null
-  label: string
-  color: string
-  name: string
-  variant?: VariantType
+  img: string | null;
+  label: string;
+  color: string;
+  name: string;
+  variant?: VariantType;
 }) => {
   return (
     <Link
@@ -128,12 +129,20 @@ export const CategoryCard = ({
     >
       <Card role="link" color={color} variant={variant}>
         <Content className="card-image" variant={variant}>
-          {img && <Image width={ContentWidth[variant]} height={ContentHeight[variant]} src={img} alt="icon" priority />}
+          {img && (
+            <Image
+              width={ContentWidth[variant]}
+              height={ContentHeight[variant]}
+              src={img}
+              alt="icon"
+              priority
+            />
+          )}
         </Content>
         <Title className="card-title" variant={variant}>
           {label}
         </Title>
       </Card>
     </Link>
-  )
-}
+  );
+};

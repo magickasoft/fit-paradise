@@ -1,4 +1,4 @@
-import { defineRouting } from 'next-intl/routing'
+import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
   locales: ['ru', 'en'],
@@ -70,4 +70,4 @@ export const routing = defineRouting({
       en: '/recipe/kartofelnye-chipsy-v-mikrovolnovke',
     },
   } as const,
-})
+});
