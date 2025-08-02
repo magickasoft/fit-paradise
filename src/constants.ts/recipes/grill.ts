@@ -1,6 +1,3 @@
-import { count } from 'console'
-import { title } from 'process'
-
 import { EQUIPMENTS } from '../equipments'
 import { INGREDIENTS } from '../ingredients'
 

@@ -7,7 +7,6 @@ import { PageWrapper } from '@/components/PageWrapper'
 import { findByKey } from '@/helpers/findByKey'
 import { DetailCard } from '@/components/Cards'
 
-import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
 import { NoList } from '@/components/NoList'
 import { use } from 'react'
 

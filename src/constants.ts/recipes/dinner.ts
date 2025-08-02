@@ -1,5 +1,3 @@
-import { count } from 'console'
-
 import { EQUIPMENTS } from '../equipments'
 import { INGREDIENTS } from '../ingredients'
 
