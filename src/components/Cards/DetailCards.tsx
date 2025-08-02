@@ -1,7 +1,9 @@
+'use client'
+
 import styled from 'styled-components'
 
 const Card = styled.div<{
-  backgroundColor?: string
+  $backgroundColor?: string
   variant?: 'default' | 'short'
 }>`
   width: 150px;
@@ -15,7 +17,7 @@ const Card = styled.div<{
   padding: 20px 10px 10px 10px;
   border-radius: 8px;
   gap: 10px;
-  background-color: ${({ backgroundColor }) => backgroundColor || '#ffffff'};
+  background-color: ${({ $backgroundColor }) => $backgroundColor || '#ffffff'};
 `
 
 const ImageBlock = styled.div`
@@ -79,7 +81,7 @@ type DetailCardProps = {
 
 export const DetailCard = ({ name, text, img, backgroundColor, variant = 'default' }: DetailCardProps) => {
   return (
-    <Card backgroundColor={backgroundColor} variant={variant}>
+    <Card $backgroundColor={backgroundColor} variant={variant}>
       <ImageBlock>{img ? <Image src={img} alt={name} /> : <NoImage>No image</NoImage>}</ImageBlock>
       <TextBlock>
         {text && <Description>{text}</Description>}

@@ -1,12 +1,14 @@
+'use client'
+
 import styled from 'styled-components'
-import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { InfoBlock } from '@/components/RecipePage'
 import { PageWrapper } from '@/components/PageWrapper'
 import { findByKey } from '@/helpers/findByKey'
 import { DetailCard } from '@/components/Cards'
-import { NoList } from '@/components/noList'
+
 import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
+import { NoList } from '@/components/NoList'
 
 const HeaderContainer = styled.div`
   max-width: 1800px;
@@ -180,14 +182,14 @@ const DetailsTitle = styled.h2`
 
 const DetailsCardsContainer = styled.section<{
   width?: string
-  justifyContent?: string
+  $justifyContent?: string
 }>`
   width: ${props => props.width || '100%'};
   display: flex;
   flex-direction: row;
   gap: 10px;
   height: 220px;
-  justify-content: ${props => props.justifyContent || 'flex-start'};
+  justify-content: ${props => props.$justifyContent || 'flex-start'};
   overflow-x: auto;
 
   @media (max-width: 768px) {
@@ -245,7 +247,11 @@ const RecipeDescription = styled.article`
   }
 `
 
-const RecipePage = ({ recipe }: { recipe: ReturnType<typeof findByKey> | null }) => {
+const RecipePage = ({ params }: { params: { name: string } }) => {
+  console.log('RecipePage params:', params)
+
+  const recipe = findByKey(params.name) || null
+
   return (
     <main>
       <Head>
@@ -326,14 +332,13 @@ const RecipePage = ({ recipe }: { recipe: ReturnType<typeof findByKey> | null })
                 )}
               </EquipmentsContainer>
             </DetailsContainer>
-
             <RecipeStepsContainer>
               {recipe.cookingRecipe?.map((step, index) => (
                 <RecipeStep key={index}>
                   <RecipeTitle>{`Шаг ${index + 1}`}</RecipeTitle>
                   <RecipeDescription>{step.description}</RecipeDescription>
                   {step.ingredients?.length > 0 && (
-                    <DetailsCardsContainer width="100%" justifyContent="center">
+                    <DetailsCardsContainer width="100%" $justifyContent="center">
                       {step.ingredients.map(ingredient => (
                         <DetailCard
                           key={ingredient.name}
@@ -360,30 +365,4 @@ const RecipePage = ({ recipe }: { recipe: ReturnType<typeof findByKey> | null })
     </main>
   )
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const keys = getAllRecipeKeys()
-
-  return {
-    paths: keys.map(name => ({ params: { name } })),
-    fallback: true,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async context => {
-  const name = context.params?.name as string
-  const recipe = findByKey(name) || null
-
-  return {
-    props: { recipe },
-    revalidate: 60,
-  }
-}
-
-export const getAllRecipeKeys = (): string[] => {
-  return Object.values(RECIPES_OBJ)
-    .flat()
-    .map(recipe => recipe.name)
-}
-
 export default RecipePage

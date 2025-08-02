@@ -4,10 +4,11 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { maxDevice } from '@/styles/device'
+import { Link } from '@/i18n/navigation'
 
 // import { ScrollIndicator } from './scrollIndicator'
 
-const Container = styled.header<{ scrolled: boolean }>`
+const Container = styled.header<{ $scrolled: boolean }>`
   background: #ffffff;
   z-index: 9998;
   position: fixed;
@@ -27,7 +28,7 @@ const Container = styled.header<{ scrolled: boolean }>`
     height: 3.5rem;
   }
 
-  border-bottom: ${({ scrolled }) => (scrolled ? '1px solid #d0d0d0' : '1px solid #ffffff')};
+  border-bottom: ${({ $scrolled }) => ($scrolled ? '1px solid #d0d0d0' : '1px solid #ffffff')};
 `
 
 const LeftBlock = styled.div`
@@ -84,17 +85,27 @@ export const Header = () => {
   return (
     <>
       {/* <ScrollIndicator /> */}
-      <Container scrolled={scrolled}>
+      <Container $scrolled={scrolled}>
         <LeftBlock>
           <Image src="/static/povr-eshka-logo.png" alt="logo" width={60} height={60} priority />
         </LeftBlock>
         <CenterBlock>
-          <div>
-            <a href="/">Главная</a>
-          </div>
-          <div>
-            <a href="/categories">Категории</a>
-          </div>
+          <Link
+            href={{
+              pathname: '/',
+            }}
+            locale="ru"
+          >
+            Главная
+          </Link>
+          <Link
+            href={{
+              pathname: '/categories',
+            }}
+            locale="ru"
+          >
+            Категории
+          </Link>
         </CenterBlock>
         <RightBlock>{/* <SearchInput /> */}</RightBlock>
       </Container>
