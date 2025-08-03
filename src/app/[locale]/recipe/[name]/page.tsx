@@ -247,6 +247,10 @@ const RecipeDescription = styled.article`
   }
 `
 
+const Zero = styled.section`
+  display: 'none';
+`
+
 const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
   const resolvedParams = use(params)
 
@@ -357,11 +361,11 @@ const RecipePage = ({ params }: { params: Promise<{ name: string }> }) => {
         )}
       </PageWrapper>
 
-      <section style={{ display: 'none' }}>
-        {recipe?.searchRequests?.map(searchRequest => (
-          <p key={searchRequest}>{searchRequest}</p>
-        ))}
-      </section>
+      <Zero>
+        {recipe?.searchRequests?.map(query => {
+          return <p key={query}>{query}</p>
+        })}
+      </Zero>
     </main>
   )
 }
