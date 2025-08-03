@@ -114,8 +114,8 @@ name = "osv-scanner"
 [[plugin]]
 name = "radarlint"
 
-# [[plugin]]
-# name = "knip"
+[[plugin]]
+name = "knip"
 
 # [[plugin]]
 # name = "biome"
