@@ -1,0 +1,36 @@
+name: Code Analysis
+
+permissions: read-all
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: 0 0 * * 1 # Every Monday at 00:00 UTC
+
+jobs:
+  qlty-check:
+    name: Qlty Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Qltysh
+        uses: qltysh/qlty-action/install@v1
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Dependencies
+        run: bun install --ci
+
+      - name: Run Qlty Check
+        run: bun run qlty:check
