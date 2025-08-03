@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit",
-    "prettier": "prettier --check \"**/*.{ts,tsx,md}\"",
-    "prettier:fix": "prettier --write \"**/*.{ts,tsx,md}\""
+    "tsc:check": "tsc --noEmit",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "prettier:fix": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "qlty:check": "qlty check --all",
+    "qlty:fmt": "qlty fmt --all",
+    "qlty:smells": "qlty smells --all"
   },
   "dependencies": {
     "@artginzburg/next-ym": "^1.3.0",

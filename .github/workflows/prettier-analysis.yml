@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Prettier Check
         id: prettier
-        run: bun run prettier
+        run: bun run prettier:check
 
       - name: Prettier Failure Handler
         if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
