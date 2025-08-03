@@ -11,8 +11,8 @@ on:
     - cron: 0 0 * * 1 # Every Monday at 00:00 UTC
 
 jobs:
-  qlty-check:
-    name: Qlty Check
+  qlty-smells:
+    name: Quality Smells Analysis
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -32,5 +32,5 @@ jobs:
       - name: Install Dependencies
         run: bun install --ci
 
-      - name: Run Qlty Check
-        run: bun run qlty:check
+      - name: Run Quality Smells Analysis
+        run: bun run qlty:smells
