@@ -104,3 +104,18 @@ name = "yamllint"
 
 [[plugin]]
 name = "gitleaks"
+
+[[plugin]]
+name = "oxc"
+
+[[plugin]]
+name = "osv-scanner"
+
+[[plugin]]
+name = "radarlint"
+
+# [[plugin]]
+# name = "knip"
+
+# [[plugin]]
+# name = "biome"
