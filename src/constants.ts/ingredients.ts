@@ -56,6 +56,8 @@ import radish from '../jsons/ingredients/vegetables/radish.json'
 import redOnion from '../jsons/ingredients/vegetables/red-onion.json'
 import tomato from '../jsons/ingredients/vegetables/tomato.json'
 import zucchini from '../jsons/ingredients/vegetables/zucchini.json'
+import bakingPowder from '../jsons/ingredients/bakery/baking-powder.json'
+import oatmeal from '../jsons/ingredients/cereals/oatmeal.json'
 
 const MEAT = {
   porkNeck,
@@ -125,6 +127,7 @@ const BAKERY = {
   lavash,
   flour,
   yeast,
+  bakingPowder,
 }
 
 const CHEESE = {
@@ -148,6 +151,10 @@ const EGGS = {
   eggs,
 }
 
+const CEREALS = {
+  oatmeal,
+}
+
 export const INGREDIENTS = {
   ...MEAT,
   ...GREANS,
@@ -160,4 +167,5 @@ export const INGREDIENTS = {
   ...SEASONING,
   ...SEEDS,
   ...EGGS,
+  ...CEREALS,
 }
