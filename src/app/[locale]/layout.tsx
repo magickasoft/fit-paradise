@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
-import '../globals.css'
 import { YandexMetricaProvider } from '@artginzburg/next-ym'
 import StyledComponentsRegistry from '@/components/StyledComponentsRegistry'
 import { notFound } from 'next/navigation'
