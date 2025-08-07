@@ -26,7 +26,7 @@ export const SUMMER_MENU = [
       selfwork: 'index, follow',
       'max-image-preview': 'large',
       viewport: 'width=device-width, initial-scale=1',
-      author: 'Повар-ешка',
+      author: 'food-paradise',
       'theme-color': '#ffffff',
     },
     searchRequests: ['салат', 'лук', 'помидоры', 'огурцы', 'сыр', 'маслины', 'перец', 'оливки'],

@@ -23,7 +23,7 @@ export const DESSERT = [
       selfwork: 'index, follow',
       'max-image-preview': 'large',
       viewport: 'width=device-width, initial-scale=1',
-      author: 'Повар-ешка',
+      author: 'food-paradise',
       'theme-color': '#ffffff',
     },
     searchRequests: ['чизкейк', 'пирожное', 'десерт'],

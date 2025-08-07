@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
-import '../globals.css'
 import { YandexMetricaProvider } from '@artginzburg/next-ym'
 import StyledComponentsRegistry from '@/components/StyledComponentsRegistry'
 import { notFound } from 'next/navigation'
@@ -48,7 +47,7 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
   setRequestLocale(locale)
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <NextIntlClientProvider>
           <StyledComponentsRegistry>
