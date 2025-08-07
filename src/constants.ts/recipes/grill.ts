@@ -26,7 +26,7 @@ export const GRILL = [
       selfwork: 'index, follow',
       'max-image-preview': 'large',
       viewport: 'width=device-width, initial-scale=1',
-      author: 'Повар-ешка',
+      author: 'food-paradise',
       'theme-color': '#ffffff',
     },
     searchRequests: [
@@ -229,7 +229,7 @@ export const GRILL = [
       selfwork: 'index, follow',
       'max-image-preview': 'large',
       viewport: 'width=device-width, initial-scale=1',
-      author: 'Повар-ешка',
+      author: 'food-paradise',
       'theme-color': '#ffffff',
     },
     searchRequests: ['шашлык', 'курица', 'кефир', 'маринад', 'лук', 'зелень', 'базилик', 'укроп', 'петрушка'],
