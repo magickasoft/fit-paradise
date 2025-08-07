@@ -1,33 +1,44 @@
 import { findByKey } from '@/helpers/findByKey'
 import RecipePage from '../../../../components/RecipePage/RecipePage'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
-export async function generateMetadata({ params }: { params: { name: string; locale: string } }) {
-  const recipe = findByKey(params.name)
+export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
+  const resolvedParams = await params
+
+  const recipe = await findByKey(resolvedParams.name)
+
+  if (!recipe) notFound()
+
+  const meta = recipe.metaSeo ?? {}
 
   return {
-    title: recipe?.metaSeo?.title || 'Recipe not found',
-    description: recipe?.metaSeo?.description || 'Recipe not found',
-    keywords: recipe?.metaSeo?.keywords || [],
+    title: meta.title || 'Recipe not found',
+    description: meta.description || 'Recipe not found',
+    keywords: meta.keywords,
     openGraph: {
-      title: recipe?.metaSeo?.['og:title'] || '',
-      description: recipe?.metaSeo?.['og:description'] || '',
-      url: recipe?.metaSeo?.['og:url'] || '',
-      images: recipe?.metaSeo?.['og:image'] ? [recipe.metaSeo['og:image']] : [],
+      title: meta['og:title'] || '',
+      description: meta['og:description'] || '',
+      url: meta['og:url'] || '',
+      images: meta['og:image'] ? [meta['og:image']] : [],
     },
     twitter: {
-      card: recipe?.metaSeo?.['twitter:card'] || 'summary_large_image',
-      title: recipe?.metaSeo?.twitterTitle || '',
-      description: recipe?.metaSeo?.twitterDescription || '',
-      images: recipe?.metaSeo?.twitterImage ? [recipe.metaSeo.twitterImage] : [],
+      card: 'summary_large_image',
+      title: meta.twitterTitle || '',
+      description: meta.twitterDescription || '',
+      images: meta.twitterImage ? [meta.twitterImage] : [],
     },
-    robots: recipe?.metaSeo?.robots || 'index, follow',
-    authors: [{ name: recipe?.metaSeo?.author || 'Food-paradise' }],
-    themeColor: recipe?.metaSeo?.['theme-color'] || '#ffffff',
+    robots: meta.robots || 'index, follow',
+    authors: [{ name: meta.author || 'Food-paradise' }],
   }
 }
 
-export default async function Page({ params }: { params: { name: string; locale: string } }) {
-  const recipe = findByKey(params.name)
+export default async function Page({ params }: { params: Promise<{ name: string }> }) {
+  const resolvedParams = await params
+
+  const recipe = await findByKey(resolvedParams.name)
+
+  if (!recipe) notFound()
 
   return <RecipePage recipe={recipe} />
 }
