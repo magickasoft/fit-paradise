@@ -58,6 +58,7 @@ import tomato from '../jsons/ingredients/vegetables/tomato.json'
 import zucchini from '../jsons/ingredients/vegetables/zucchini.json'
 import bakingPowder from '../jsons/ingredients/bakery/baking-powder.json'
 import oatmeal from '../jsons/ingredients/cereals/oatmeal.json'
+import soda from '../jsons/ingredients/seasoning/soda.json'
 
 const MEAT = {
   porkNeck,
@@ -141,6 +142,7 @@ const SEASONING = {
   salt,
   sugar,
   bayLeaf,
+  soda,
 }
 
 const SEEDS = {

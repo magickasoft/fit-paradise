@@ -21,6 +21,8 @@ import spatula from '../jsons/equipments/spatula.json'
 import spoon from '../jsons/equipments/spoon.json'
 import tongs from '../jsons/equipments/tongs.json'
 import whisk from '../jsons/equipments/whisk.json'
+import sieve from '../jsons/equipments/dishes/sieve.json'
+import ladle from '../jsons/equipments/dishes/ladle.json'
 
 const APPLIANCES = {
   microwave,
@@ -36,6 +38,8 @@ const DISHES = {
   colander,
   bakingTray,
   lid,
+  sieve,
+  ladle,
 }
 
 export const EQUIPMENTS = {
