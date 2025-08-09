@@ -5,8 +5,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { maxDevice } from '@/styles/device'
 import { Link } from '@/i18n/navigation'
-
-// import { ScrollIndicator } from './scrollIndicator'
+import { FiMenu, FiX } from 'react-icons/fi'
 
 const Container = styled.header<{ $scrolled: boolean }>`
   background: #ffffff;
@@ -19,36 +18,35 @@ const Container = styled.header<{ $scrolled: boolean }>`
   align-items: center;
   justify-content: space-between;
   height: 4.75rem;
-  margin: 0 auto;
   padding: 0 100px;
-  transition: border-bottom 0.3s ease;
+  border-bottom: ${({ $scrolled }) => ($scrolled ? '1px solid #d0d0d0' : 'transparent')};
+  box-shadow: ${({ $scrolled }) => ($scrolled ? '0 2px 6px rgba(0,0,0,0.05)' : 'none')};
+  transition: all 0.3s ease;
 
   @media ${maxDevice.tablet} {
-    padding: 0 30px;
+    padding: 0 20px;
     height: 3.5rem;
   }
-
-  border-bottom: ${({ $scrolled }) => ($scrolled ? '1px solid #d0d0d0' : '1px solid #ffffff')};
 `
 
 const LeftBlock = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  width: fit-content;
-  margin-right: 40px;
-`
-
-const CenterBlock = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 24px;
-  align-items: center;
-  width: 100%;
 
   a {
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+`
+
+const CenterBlock = styled.nav<{ $menuOpen?: boolean }>`
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  a {
+    font-size: 18px;
     text-decoration: none;
     color: #333333;
     transition: color 0.2s ease;
@@ -56,10 +54,30 @@ const CenterBlock = styled.nav`
     &:hover {
       color: #ff6f61;
     }
+  }
 
-    @media ${maxDevice.tablet} {
-      font-size: 14px;
-    }
+  @media ${maxDevice.tablet} {
+    display: ${({ $menuOpen }) => ($menuOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    gap: 16px;
+  }
+`
+
+const BurgerMenu = styled.div`
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+
+  @media ${maxDevice.tablet} {
+    display: block;
   }
 `
 
@@ -69,46 +87,76 @@ const RightBlock = styled.div`
   gap: 20px;
 `
 
+const StyledButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #ff6f61;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #e65c50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3);
+  }
+
+  @media ${maxDevice.tablet} {
+    height: 36px;
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  @media ${maxDevice.mobileL} {
+    width: 100%;
+    justify-content: center;
+  }
+`
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 0)
     }
-
     onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
-    <>
-      {/* <ScrollIndicator /> */}
-      <Container $scrolled={scrolled}>
-        <LeftBlock>
-          <Image src="/static/povr-eshka-logo.png" alt="logo" width={60} height={60} priority />
-        </LeftBlock>
-        <CenterBlock>
-          <Link
-            href={{
-              pathname: '/',
-            }}
-            locale="ru"
-          >
-            Главная
-          </Link>
-          <Link
-            href={{
-              pathname: '/categories',
-            }}
-            locale="ru"
-          >
-            Категории
-          </Link>
-        </CenterBlock>
-        <RightBlock>{/* <SearchInput /> */}</RightBlock>
-      </Container>
-    </>
+    <Container $scrolled={scrolled}>
+      <LeftBlock>
+        <Link href="/" locale="ru">
+          <Image src="/static/povr-eshka-logo.png" alt="logo" width={50} height={50} priority />
+        </Link>
+      </LeftBlock>
+
+      <CenterBlock $menuOpen={menuOpen}>
+        <Link href="/" locale="ru">
+          Главная
+        </Link>
+        <Link href="/categories" locale="ru">
+          Категории
+        </Link>
+      </CenterBlock>
+
+      <RightBlock>
+        <StyledButton href="https://example.com" target="_blank" rel="noopener noreferrer">
+          Предложить рецепт
+        </StyledButton>
+        <BurgerMenu onClick={() => setMenuOpen(prev => !prev)}>{menuOpen ? <FiX /> : <FiMenu />}</BurgerMenu>
+      </RightBlock>
+    </Container>
   )
 }
