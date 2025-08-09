@@ -615,49 +615,494 @@ export const BREAKFAST = [
       },
     ],
   },
+  {
+    metaSeo: {
+      title: 'Яичница с сосисками и фасолью — сытный английский завтрак за 25 минут',
+      description:
+        'Классический английский завтрак в домашних условиях: яичница с фасолью в томатном соусе и жареными сосисками. Пошаговый рецепт с фото и советами по выбору ингредиентов. Энергетическая ценность и варианты подачи.',
+      keywords: [
+        'яичница с сосисками',
+        'английский завтрак',
+        'фасоль в томатном соусе',
+        'сытный завтрак',
+        'рецепт яичницы',
+        'быстрый завтрак',
+        'завтрак как в англии',
+        'яйца с фасолью',
+        'утреннее меню',
+        'белковый завтрак',
+        'завтрак за 25 минут',
+        'рецепт с фасолью',
+        'сосиски на завтрак',
+        'энергичный старт дня',
+        'завтрак для мужчин',
+      ],
+      'og:title': 'Яичница с сосисками и фасолью — сытный английский завтрак за 25 минут',
+      'og:description':
+        'Классический английский завтрак в домашних условиях: яичница с фасолью в томатном соусе и жареными сосисками. Пошаговый рецепт с фото и советами по выбору ингредиентов.',
+      'og:url': 'https://povreshka.ru/recipe/scrambled-eggs-with-sausages-and-beans',
+      'og:image': '/static/recipes/breakfast/scrambled-eggs-with-sausages-and-beans.jpeg',
+      twitterTitle: 'Яичница с сосисками и фасолью — сытный английский завтрак за 25 минут',
+      twitterDescription:
+        'Классический английский завтрак в домашних условиях: яицa с фасолью и сосисками. Полноценный белковый завтрак за 25 минут!',
+      twitterImage: '/static/recipes/breakfast/scrambled-eggs-with-sausages-and-beans.jpeg',
+      twitterUrl: 'https://povreshka.ru/recipe/scrambled-eggs-with-sausages-and-beans',
+      'twitter:card': 'summary_large_image',
+      canonicalUrl: 'https://povreshka.ru/recipe/scrambled-eggs-with-sausages-and-beans',
+      robots: 'index, follow',
+      googlebot: 'index, follow',
+      yandex: 'index, follow',
+      selfwork: 'index, follow',
+      'max-image-preview': 'large',
+      viewport: 'width=device-width, initial-scale=1',
+      author: 'food-paradise',
+      'theme-color': '#ffffff',
+    },
+    searchRequests: [
+      'английский завтрак',
+      'яичница с сосисками',
+      'фасоль в томатном соусе',
+      'сытный завтрак',
+      'яйца с фасолью',
+    ],
+    categories: [{ name: 'breakfast' }, { name: 'protein' }],
+    key: 'scrambled-eggs-with-sausages-and-beans',
+    name: 'scrambled-eggs-with-sausages-and-beans',
+    img: '/static/recipes/breakfast/scrambled-eggs-with-sausages-and-beans.jpeg',
+    title: 'Яичница с сосисками и фасолью',
+    description:
+      'Аутентичный английский завтрак в русской интерпретации: золотистая яичница с поджаристыми молочными сосисками и фасолью в густом томатном соусе. Это блюдо — идеальный баланс белков и сложных углеводов для энергичного начала дня. Особый секрет — добавление вустерского соуса и копченой паприки для глубины вкуса.',
+    calories: 420,
+    preparation: 5,
+    time: 25,
+    level: 1,
+    rating: 4.8,
+    portions: 2,
+    used: [18.5, 32.7, 12.4],
+    ingredients: [
+      {
+        ...INGREDIENTS.eggs,
+        count: 4,
+      },
+      {
+        ...INGREDIENTS.milkSausages,
+        count: 4,
+        note: 'лучше молочные высшего сорта',
+      },
+      {
+        ...INGREDIENTS.cannedBeans,
+        count: 200,
+        note: 'в томатном соусе',
+      },
+      {
+        ...INGREDIENTS.vegetableOil,
+        count: 2,
+      },
+      {
+        ...INGREDIENTS.butter,
+        count: 10,
+      },
+      {
+        ...INGREDIENTS.worcestershireSauce,
+        count: 1,
+      },
+      {
+        ...INGREDIENTS.smokedPaprika,
+        count: 0.5,
+      },
+      {
+        ...INGREDIENTS.salt,
+      },
+      {
+        ...INGREDIENTS.groundBlackPepper,
+      },
+    ],
+    equipments: [EQUIPMENTS.pan, EQUIPMENTS.spatula, EQUIPMENTS.pot, EQUIPMENTS.tongs, EQUIPMENTS.plate],
+    cookingRecipe: [
+      {
+        img: '/static/steps/english-breakfast1.webp',
+        video: null,
+        description:
+          'Нарежьте сосиски на кусочки по 3 см. Разогрейте сковороду с 1 ст.л. растительного масла на среднем огне. Обжаривайте сосиски 5-7 минут до румяной корочки, периодически переворачивая щипцами. В конце добавьте 1 ч.л. вустерского соуса и перемешайте.',
+        ingredients: [
+          { ...INGREDIENTS.milkSausages },
+          { ...INGREDIENTS.vegetableOil },
+          { ...INGREDIENTS.worcestershireSauce },
+        ],
+      },
+      {
+        img: '/static/steps/english-breakfast2.webp',
+        video: null,
+        description:
+          'В отдельной кастрюльке разогрейте фасоль в томатном соусе на слабом огне. Добавьте копченую паприку и 1 ч.л. сливочного масла для мягкости вкуса. Томите под крышкой 5 минут, периодически помешивая.',
+        ingredients: [{ ...INGREDIENTS.cannedBeans }, { ...INGREDIENTS.smokedPaprika }, { ...INGREDIENTS.butter }],
+      },
+      {
+        img: '/static/steps/english-breakfast3.webp',
+        video: null,
+        description:
+          'В чистой сковороде растопите оставшееся сливочное масло с 1 ст.л. растительного. Взбейте яйца вилкой с щепоткой соли и перца. Вылейте на сковороду и готовьте на среднем огне 2-3 минуты, аккуратно помешивая лопаткой для получения нежной текстуры.',
+        ingredients: [
+          { ...INGREDIENTS.eggs },
+          { ...INGREDIENTS.butter },
+          { ...INGREDIENTS.vegetableOil },
+          { ...INGREDIENTS.salt },
+          { ...INGREDIENTS.groundBlackPepper },
+        ],
+      },
+      {
+        img: '/static/steps/english-breakfast4.webp',
+        video: null,
+        description:
+          'Подавайте на подогретых тарелках: сначала фасоль, затем яичницу, сверху выложите сосиски. Украсьте свежей петрушкой. Традиционно подается с тостами из цельнозернового хлеба.',
+        ingredients: [],
+      },
+    ],
+    tips: [
+      'Для аутентичности используйте английские колбаски Cumberland',
+      'Вегетарианский вариант: замените сосиски на грибы портобелло',
+      'Добавьте 1 ч.л. коричневого сахара в фасоль для карамельных ноток',
+      'Перед подачей можно посыпать тертым чеддером',
+    ],
+  },
+  {
+    metaSeo: {
+      title: 'Шакшука — израильская яичница с помидорами и перцем | Рецепт с фото',
+      description:
+        'Аутентичный рецепт шакшуки — ароматной яичницы с томатами, сладким перцем и специями. Секреты правильной консистенции, 3 уровня остроты и советы по подаче. Готовим восточный завтрак за 30 минут!',
+      keywords: [
+        'шакшука',
+        'яичница по-израильски',
+        'рецепт шакшуки',
+        'яйца с помидорами',
+        'восточный завтрак',
+        'острая яичница',
+        'арабская кухня',
+        'завтрак с перцем',
+        'яичница в томатном соусе',
+        'рецепт за 30 минут',
+        'вегетарианская шакшука',
+        'питательный завтрак',
+        'яичница со специями',
+        'баклажаны в шакшуке',
+        'подача шакшуки',
+      ],
+      'og:title': 'Шакшука — израильская яичница с помидорами и перцем | Рецепт с фото',
+      'og:description':
+        'Аутентичный рецепт шакшуки — ароматной яичницы с томатами, перцем и специями. Секреты правильной консистенции и советы по подаче. Готовим восточный завтрак за 30 минут!',
+      'og:url': 'https://povreshka.ru/recipe/scrambled-eggs-shakshuka',
+      'og:image': '/static/recipes/breakfast/scrambled-eggs-shakshuka.jpeg',
+      twitterTitle: 'Шакшука — израильская яичница с помидорами и перцем | Рецепт с фото',
+      twitterDescription:
+        'Научитесь готовить настоящую шакшуку — восточный завтрак, покоривший мир! 3 уровня остроты на выбор.',
+      twitterImage: '/static/recipes/breakfast/scrambled-eggs-shakshuka.jpeg',
+      twitterUrl: 'https://povreshka.ru/recipe/scrambled-eggs-shakshuka',
+      'twitter:card': 'summary_large_image',
+      canonicalUrl: 'https://povreshka.ru/recipe/scrambled-eggs-shakshuka',
+      robots: 'index, follow',
+      googlebot: 'index, follow',
+      yandex: 'index, follow',
+      selfwork: 'index, follow',
+      'max-image-preview': 'large',
+      viewport: 'width=device-width, initial-scale=1',
+      author: 'food-paradise',
+      'theme-color': '#ffffff',
+    },
+    searchRequests: ['шакшука', 'яичница по-израильски', 'рецепт шакшуки', 'яйца с помидорами', 'восточный завтрак'],
+    categories: [{ name: 'breakfast' }, { name: 'vegetarian' }],
+    key: 'scrambled-eggs-shakshuka',
+    name: 'scrambled-eggs-shakshuka',
+    img: '/static/recipes/breakfast/scrambled-eggs-shakshuka.jpeg',
+    title: 'Шакшука (израильская яичница)',
+    description:
+      'Традиционное блюдо ближневосточной кухни, завоевавшее мировую популярность. В основе — томленые в ароматном томатно-перечном соусе яйца с копченой паприкой, тмином и зеленью. Наш рецепт сохраняет аутентичность, но адаптирован под доступные в России ингредиенты. Секрет — в медленном тушении овощей и правильном моменте добавления яиц.',
+    calories: 320,
+    preparation: 15,
+    time: 30,
+    level: 2,
+    rating: 4.9,
+    portions: 2,
+    used: [22.1, 18.7, 9.3],
+    ingredients: [
+      {
+        ...INGREDIENTS.eggs,
+        count: 4,
+      },
+      {
+        ...INGREDIENTS.tomato,
+        count: 3,
+        note: 'или 400 г консервированных',
+      },
+      {
+        ...INGREDIENTS.bellPepper,
+        count: 2,
+      },
+      {
+        ...INGREDIENTS.onion,
+        count: 1,
+      },
+      {
+        ...INGREDIENTS.garlic,
+        count: 3,
+        unit: 'зубчика',
+      },
+      {
+        ...INGREDIENTS.tomatoPaste,
+        count: 1,
+      },
+      {
+        ...INGREDIENTS.smokedPaprika,
+        count: 1,
+      },
+      {
+        ...INGREDIENTS.cumin,
+        count: 0.5,
+      },
+      {
+        ...INGREDIENTS.chiliPepper,
+        count: 0.5,
+        note: 'по желанию',
+      },
+      {
+        ...INGREDIENTS.vegetableOil,
+        count: 2,
+      },
+      {
+        ...INGREDIENTS.salt,
+      },
+      {
+        ...INGREDIENTS.groundBlackPepper,
+      },
+      {
+        ...INGREDIENTS.parsley,
+        count: 10,
+      },
+    ],
+    equipments: [
+      EQUIPMENTS.pan,
+      EQUIPMENTS.spatula,
+      EQUIPMENTS.woodenSpoon,
+      EQUIPMENTS.knife,
+      EQUIPMENTS.cutBoard,
+      EQUIPMENTS.lid,
+    ],
+    cookingRecipe: [
+      {
+        img: '/static/steps/shakshuka1.webp',
+        video: null,
+        description:
+          'Нарежьте лук полукольцами, перец соломкой, чеснок тонкими пластинами. Помидоры ошпарьте кипятком, снимите кожицу и нарежьте кубиками (консервированные просто разомните вилкой).',
+        ingredients: [
+          { ...INGREDIENTS.onion },
+          { ...INGREDIENTS.bellPepper },
+          { ...INGREDIENTS.garlic },
+          { ...INGREDIENTS.tomato },
+        ],
+      },
+      {
+        img: '/static/steps/shakshuka2.webp',
+        video: null,
+        description:
+          'Разогрейте масло в глубокой сковороде. Обжаривайте лук 3 минуты до прозрачности. Добавьте перец и готовьте еще 5 минут. Положите чеснок, томатную пасту и все специи, прогрейте 1 минуту до аромата.',
+        ingredients: [
+          { ...INGREDIENTS.vegetableOil },
+          { ...INGREDIENTS.tomatoPaste },
+          { ...INGREDIENTS.smokedPaprika },
+          { ...INGREDIENTS.cumin },
+          { ...INGREDIENTS.chiliPepper },
+        ],
+      },
+      {
+        img: '/static/steps/shakshuka3.webp',
+        video: null,
+        description:
+          'Добавьте помидоры, посолите и поперчите. Тушите под крышкой на медленном огне 15 минут, пока соус не загустеет. Сделайте в соусе 4 углубления ложкой.',
+        ingredients: [{ ...INGREDIENTS.salt }, { ...INGREDIENTS.groundBlackPepper }],
+      },
+      {
+        img: '/static/steps/shakshuka4.webp',
+        video: null,
+        description:
+          'Аккуратно разбейте яйца в углубления. Накройте крышкой и готовьте 5-7 минут до желаемой степени прожарки желтков. Посыпьте рубленой петрушкой и подавайте прямо в сковороде с питой или хлебом.',
+        ingredients: [{ ...INGREDIENTS.eggs }, { ...INGREDIENTS.parsley }],
+      },
+    ],
+    tips: [
+      'Для средиземноморского варианта добавьте оливки и фету',
+      'Мясная версия: подойдет фарш или кусочки курицы',
+      'Если соус слишком кислый — добавьте 1 ч.л. меда',
+      'Лучше использовать чугунную сковороду',
+    ],
+    variations: [
+      {
+        name: 'С баклажанами',
+        changes: 'Добавьте 1 нарезанный кубиками баклажан на этапе обжарки перца',
+      },
+      {
+        name: 'Зеленая шакшука',
+        changes: 'Замените помидоры на 300 г шпината и 2 цукини',
+      },
+    ],
+  },
+  {
+    metaSeo: {
+      title: 'Менемен — турецкая яичница с перцем и помидорами | Пошаговый рецепт',
+      description:
+        'Настоящий турецкий менемен: нежная яичница с сочными овощами и ароматными специями. Секреты правильной текстуры, выбор перцев и варианты подачи. Готовим солнечный завтрак за 25 минут!',
+      keywords: [
+        'менемен',
+        'турецкая яичница',
+        'яйца по-турецки',
+        'рецепт менемена',
+        'завтрак с перцем',
+        'яичница с овощами',
+        'восточная кухня',
+        'яйца с помидорами',
+        'быстрый завтрак',
+        'рецепт за 25 минут',
+        'питательный завтрак',
+        'яичница со специями',
+        'турецкая кухня',
+        'завтрак как в турции',
+        'подача менемена',
+      ],
+      'og:title': 'Менемен — турецкая яичница с перцем и помидорами | Пошаговый рецепт',
+      'og:description':
+        'Настоящий турецкий менемен: нежная яичница с сочными овощами и специями. Секреты правильной текстуры и варианты подачи. Готовим за 25 минут!',
+      'og:url': 'https://povreshka.ru/recipe/menemen',
+      'og:image': '/static/recipes/breakfast/menemen.jpeg',
+      twitterTitle: 'Менемен — турецкая яичница с перцем и помидорами | Пошаговый рецепт',
+      twitterDescription: 'Научитесь готовить менемен как в стамбульских кафе! Солнечный завтрак за 25 минут.',
+      twitterImage: '/static/recipes/breakfast/menemen.jpeg',
+      twitterUrl: 'https://povreshka.ru/recipe/menemen',
+      'twitter:card': 'summary_large_image',
+      canonicalUrl: 'https://povreshka.ru/recipe/menemen',
+      robots: 'index, follow',
+      googlebot: 'index, follow',
+      yandex: 'index, follow',
+      selfwork: 'index, follow',
+      'max-image-preview': 'large',
+      viewport: 'width=device-width, initial-scale=1',
+      author: 'food-paradise',
+      'theme-color': '#ffffff',
+    },
+    searchRequests: ['менемен', 'турецкая яичница', 'яйца по-турецки', 'рецепт менемена', 'завтрак с перцем'],
+    categories: [{ name: 'breakfast' }, { name: 'vegetarian' }],
+    key: 'menemen',
+    name: 'menemen',
+    img: '/static/recipes/breakfast/menemen.jpeg',
+    title: 'Менемен (турецкая яичница)',
+    description:
+      'Визитная карточка турецкой кухни — менемен отличается от привычной яичницы особым способом приготовления. Яйца не жарятся, а томятся в овощном рагу из сладких перцев и помидоров, приобретая нежную кремовую текстуру. Наш рецепт сохраняет традиционную технологию, но адаптирован под российские продукты. Обязательный элемент — свежий турецкий перец «чили» и оливковое масло холодного отжима.',
+    calories: 280,
+    preparation: 10,
+    time: 25,
+    level: 2,
+    rating: 4.9,
+    portions: 2,
+    used: [15.8, 20.4, 8.2],
+    ingredients: [
+      {
+        ...INGREDIENTS.eggs,
+        count: 4,
+      },
+      {
+        ...INGREDIENTS.tomato,
+        count: 3,
+      },
+      {
+        ...INGREDIENTS.greenPepper,
+        count: 2,
+      },
+      {
+        ...INGREDIENTS.onion,
+        count: 1,
+        note: 'красный',
+      },
+      {
+        ...INGREDIENTS.garlic,
+        count: 2,
+        unit: 'зубчика',
+      },
+      {
+        ...INGREDIENTS.oliveOil,
+        count: 3,
+      },
+      {
+        ...INGREDIENTS.redPepperFlakes,
+        count: 0.5,
+      },
+      {
+        ...INGREDIENTS.driedMint,
+        count: 0.5,
+      },
+      {
+        ...INGREDIENTS.salt,
+      },
+      {
+        ...INGREDIENTS.groundBlackPepper,
+      },
+      {
+        ...INGREDIENTS.fetaCheese,
+        count: 50,
+        note: 'по желанию',
+      },
+      {
+        ...INGREDIENTS.parsley,
+        count: 10,
+      },
+    ],
+    equipments: [EQUIPMENTS.pan, EQUIPMENTS.woodenSpoon, EQUIPMENTS.knife, EQUIPMENTS.cutBoard, EQUIPMENTS.lid],
+    cookingRecipe: [
+      {
+        img: null,
+        video: null,
+        description:
+          'Нарежьте перец тонкими полукольцами, лук — кубиками, помидоры — средними дольками (предварительно ошпарьте и снимите кожицу). Чеснок мелко порубите. Важно: овощи должны быть примерно одинакового размера для равномерного приготовления.',
+        ingredients: [
+          { ...INGREDIENTS.greenPepper },
+          { ...INGREDIENTS.onion },
+          { ...INGREDIENTS.tomato },
+          { ...INGREDIENTS.garlic },
+        ],
+      },
+      {
+        img: null,
+        video: null,
+        description:
+          'Разогрейте оливковое масло в сковороде с высокими бортами. На среднем огне обжаривайте лук 2 минуты до прозрачности. Добавьте перец и готовьте еще 5 минут, пока он не станет мягким. В конце положите чеснок и все специи, прогрейте 30 секунд.',
+        ingredients: [{ ...INGREDIENTS.oliveOil }, { ...INGREDIENTS.redPepperFlakes }, { ...INGREDIENTS.driedMint }],
+      },
+      {
+        img: null,
+        video: null,
+        description:
+          'Добавьте помидоры, посолите и поперчите. Тушите на среднем огне 10 минут без крышки, пока помидоры не разварятся в соус, а жидкость не испарится. В классическом варианте помидоры должны полностью раствориться.',
+        ingredients: [{ ...INGREDIENTS.salt }, { ...INGREDIENTS.groundBlackPepper }],
+      },
+      {
+        img: null,
+        video: null,
+        description:
+          'Уменьшите огонь до минимума. Ложкой сделайте в овощной массе 4 углубления и влейте в каждое по яйцу. Накройте крышкой и готовьте 3-5 минут до желаемой степени прожарки желтков. В конце посыпьте рубленой петрушкой и крошкой феты.',
+        ingredients: [{ ...INGREDIENTS.eggs }, { ...INGREDIENTS.parsley }, { ...INGREDIENTS.fetaCheese }],
+      },
+    ],
+    tips: [
+      'Для аутентичности используйте турецкие длинные зеленые перцы',
+      'Перед подачей сбрызните лимонным соком',
+      'Подавайте сразу в сковороде с теплым хлебом',
+      'Если нет свежих помидоров — возьмите 400 г консервированных',
+    ],
+    variations: [
+      {
+        name: 'С колбасой суджук',
+        changes: 'Добавьте 100 г нарезанной турецкой колбасы на этапе обжарки лука',
+      },
+      {
+        name: 'Деревенский вариант',
+        changes: 'Добавьте 1 нарезанный кубиками баклажан и 1 картофелину',
+      },
+    ],
+  },
 ]
-
-// {
-//   key: 'scrambled-eggs-with-sausages-and-beans',
-//   name: 'scrambled-eggs-with-sausages-and-beans',
-//   img: null,
-//   title: 'Яичница с сосисками и фасолью',
-//   description:
-//     'Это сытное и сбалансированное блюдо вдохновлено английскими традициями. В яичнице с фасолью и сосисками сочетаются белки, углеводы и насыщенный вкус. Подойдёт не только для завтрака, но и для позднего ужина. Готовится просто, а съедается с удовольствием.',
-//   time: 25,
-//   level: 1,
-//   rating: 5,
-// },
-// {
-//   key: 'scrambled-eggs-shakshuka',
-//   name: 'scrambled-eggs-shakshuka',
-//   img: null,
-//   title: 'Яичница шакшука',
-//   description:
-//     'Шакшука — взрыв вкуса и цвета! Томаты, специи, сладкий перец и яйца объединяются в сковороде, создавая ароматное блюдо восточной кухни. Идеально подходит для любителей остринки и насыщенных соусов. Удобный и быстрый вариант, если хочется чего-то необычного.',
-//   time: 30,
-//   level: 1,
-//   rating: 5,
-// },
-// {
-//   key: 'hearty-scrambled-eggs',
-//   name: 'hearty-scrambled-eggs',
-//   img: null,
-//   title: 'Cытная яичница',
-//   description:
-//     'Эта яичница — настоящий праздник вкуса. Колбаски, свежие овощи и зелень делают её питательной и ароматной. Подходит для тех, кто предпочитает плотные и разнообразные завтраки. Быстро готовится и отлично насыщает на долгое время.',
-//   time: 15,
-//   level: 2,
-//   rating: 4.7,
-// },
-// {
-//   key: 'menemen',
-//   name: 'menemen',
-//   img: null,
-//   title: 'Менемен (турецкая яичница)',
-//   description:
-//     'Менемен — турецкий кулинарный хит. В этом блюде яйца томятся с перцами и помидорами до идеальной мягкости, а специи придают характер. Добавьте сыр или зелень, и получите завтрак, полный южного колорита. Отличный способ разнообразить утреннее меню.',
-//   time: 25,
-//   level: 1,
-//   rating: 5,
-// },

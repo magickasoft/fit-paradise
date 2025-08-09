@@ -59,6 +59,16 @@ import zucchini from '../jsons/ingredients/vegetables/zucchini.json'
 import bakingPowder from '../jsons/ingredients/bakery/baking-powder.json'
 import oatmeal from '../jsons/ingredients/cereals/oatmeal.json'
 import soda from '../jsons/ingredients/seasoning/soda.json'
+import redPepperFlakes from '../jsons/ingredients/seasoning/red-pepper-flakes.json'
+import greenPepper from '../jsons/ingredients/vegetables/green-pepper.json'
+import driedMint from '../jsons/ingredients/seasoning/dried-mint.json'
+import smokedPaprika from '../jsons/ingredients/seasoning/smoked-paprika.json'
+import cumin from '../jsons/ingredients/seasoning/cumin.json'
+import tomatoPaste from '../jsons/ingredients/vegetables/tomato-paste.json'
+import chiliPepper from '../jsons/ingredients/vegetables/chili-pepper.json'
+import worcestershireSauce from '../jsons/ingredients/liquid/worcestershire-sauce.json'
+import milkSausages from '../jsons/ingredients/meat/milk-sausages.json'
+import cannedBeans from '../jsons/ingredients/vegetables/canned-beans.json'
 
 const MEAT = {
   porkNeck,
@@ -66,6 +76,7 @@ const MEAT = {
   chickenBreast,
   boiledSausage,
   boiledPorkSausage,
+  milkSausages,
 }
 
 const GREANS = {
@@ -94,6 +105,10 @@ const VEGATABLES = {
   cabbage,
   broccoli,
   olives,
+  greenPepper,
+  chiliPepper,
+  tomatoPaste,
+  cannedBeans,
 }
 
 const LIQUIDS = {
@@ -109,6 +124,7 @@ const LIQUIDS = {
   breadKvass,
   vinegar,
   kefir32,
+  worcestershireSauce,
 }
 
 const SAUCES = {
@@ -143,6 +159,10 @@ const SEASONING = {
   sugar,
   bayLeaf,
   soda,
+  redPepperFlakes,
+  driedMint,
+  smokedPaprika,
+  cumin,
 }
 
 const SEEDS = {

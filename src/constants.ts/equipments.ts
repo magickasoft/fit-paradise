@@ -23,6 +23,7 @@ import tongs from '../jsons/equipments/tongs.json'
 import whisk from '../jsons/equipments/whisk.json'
 import sieve from '../jsons/equipments/dishes/sieve.json'
 import ladle from '../jsons/equipments/dishes/ladle.json'
+import woodenSpoon from '../jsons/equipments/wooden-spoon.json'
 
 const APPLIANCES = {
   microwave,
@@ -53,6 +54,7 @@ export const EQUIPMENTS = {
   pastryBrush,
   cutBoard,
   spoon,
+  woodenSpoon,
   measuringSpoon,
   grill,
   tongs,

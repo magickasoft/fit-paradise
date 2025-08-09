@@ -62,12 +62,22 @@ const Description = styled.p`
   color: #333;
 `
 
-const Title = styled.h2`
+const Title = styled.h2<{ $variant?: 'default' | 'short' }>`
   font-size: 0.7rem;
   font-weight: normal;
   margin: 5px 0;
   text-align: center;
   color: #777;
+
+  ${({ $variant }) =>
+    $variant === 'short' &&
+    `
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* количество строк */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    `}
 `
 
 type DetailCardProps = {
@@ -85,7 +95,7 @@ export const DetailCard = ({ name, text, img, backgroundColor, variant = 'defaul
       <ImageBlock>{img ? <Image src={img} alt={name} /> : <NoImage>No image</NoImage>}</ImageBlock>
       <TextBlock>
         {text && <Description>{text}</Description>}
-        <Title>{name}</Title>
+        <Title $variant={variant}>{name}</Title>
       </TextBlock>
     </Card>
   )
