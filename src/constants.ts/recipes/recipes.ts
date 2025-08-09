@@ -66,6 +66,8 @@ export interface Recipe {
     description: string
     ingredients: { name: string; count?: number; gauge: string; img: string | null }[]
   }[]
+  tips?: string[]
+  variations?: { name: string; changes: string }[]
 }
 
 export const RECIPES_OBJ: {
