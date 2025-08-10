@@ -9,6 +9,7 @@ import { Locale, hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
@@ -54,6 +55,7 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
             <YandexMetricaProvider>
               <Header />
               {children}
+              <Footer />
             </YandexMetricaProvider>
           </StyledComponentsRegistry>
         </NextIntlClientProvider>
