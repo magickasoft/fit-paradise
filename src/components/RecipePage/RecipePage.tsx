@@ -335,7 +335,7 @@ const RecipePage = ({ recipe }: { recipe: Recipe | null }) => {
                         key={ingredient.name}
                         name={ingredient.name}
                         text={ingredient.count && ingredient.gauge ? `${ingredient.count} ${ingredient.gauge}` : ''}
-                        img={ingredient.img}
+                        img={ingredient?.img || null}
                       />
                     ))}
                   </DetailsCardsContainer>
@@ -349,7 +349,12 @@ const RecipePage = ({ recipe }: { recipe: Recipe | null }) => {
                 {recipe.equipments.length ? (
                   <DetailsCardsContainer>
                     {recipe.equipments.map(equipment => (
-                      <DetailCard key={equipment.name} name={equipment.name} img={equipment.img} variant="short" />
+                      <DetailCard
+                        key={equipment.name}
+                        name={equipment.name}
+                        img={equipment?.img || null}
+                        variant="short"
+                      />
                     ))}
                   </DetailsCardsContainer>
                 ) : (
@@ -369,7 +374,7 @@ const RecipePage = ({ recipe }: { recipe: Recipe | null }) => {
                           key={ingredient.name}
                           name={ingredient.name}
                           text={ingredient.count && ingredient.gauge ? `${ingredient.count} ${ingredient.gauge}` : ''}
-                          img={ingredient.img}
+                          img={ingredient?.img || null}
                           backgroundColor="#f9f9f9"
                           variant="short"
                         />
