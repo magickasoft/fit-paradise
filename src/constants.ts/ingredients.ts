@@ -29,6 +29,7 @@ import boiledPorkSausage from '../jsons/ingredients/meat/boiled-pork-sausage.jso
 import boiledSausage from '../jsons/ingredients/meat/boiled-sausage.json'
 import chickenBreast from '../jsons/ingredients/meat/chicken-breast.json'
 import chickenThighFillet from '../jsons/ingredients/meat/chicken-thigh-fillet.json'
+import chickenBreastFillet from '../jsons/ingredients/meat/chicken-breast-fillet.json'
 import porkNeck from '../jsons/ingredients/meat/pork-neck.json'
 import butter from '../jsons/ingredients/oil/butter.json'
 import meltedButter from '../jsons/ingredients/oil/melted-butter.json'
@@ -55,6 +56,7 @@ import potato from '../jsons/ingredients/vegetables/potato.json'
 import radish from '../jsons/ingredients/vegetables/radish.json'
 import redOnion from '../jsons/ingredients/vegetables/red-onion.json'
 import tomato from '../jsons/ingredients/vegetables/tomato.json'
+import lemon from '../jsons/ingredients/vegetables/lemon.json'
 import zucchini from '../jsons/ingredients/vegetables/zucchini.json'
 import bakingPowder from '../jsons/ingredients/bakery/baking-powder.json'
 import oatmeal from '../jsons/ingredients/cereals/oatmeal.json'
@@ -67,12 +69,14 @@ import cumin from '../jsons/ingredients/seasoning/cumin.json'
 import tomatoPaste from '../jsons/ingredients/vegetables/tomato-paste.json'
 import chiliPepper from '../jsons/ingredients/vegetables/chili-pepper.json'
 import worcestershireSauce from '../jsons/ingredients/liquid/worcestershire-sauce.json'
+import honey from '../jsons/ingredients/liquid/honey.json'
 import milkSausages from '../jsons/ingredients/meat/milk-sausages.json'
 import cannedBeans from '../jsons/ingredients/vegetables/canned-beans.json'
 
 const MEAT = {
   porkNeck,
   chickenThighFillet,
+  chickenBreastFillet,
   chickenBreast,
   boiledSausage,
   boiledPorkSausage,
@@ -109,6 +113,7 @@ const VEGATABLES = {
   chiliPepper,
   tomatoPaste,
   cannedBeans,
+  lemon,
 }
 
 const LIQUIDS = {
@@ -125,6 +130,7 @@ const LIQUIDS = {
   vinegar,
   kefir32,
   worcestershireSauce,
+  honey,
 }
 
 const SAUCES = {
