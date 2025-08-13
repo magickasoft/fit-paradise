@@ -10,6 +10,7 @@ const withNextIntl = createNextIntlPlugin({
 })
 
 const config: NextConfig = {
+  reactStrictMode: true,
   compiler: {
     removeConsole: !isDevelopment ? { exclude: ['error', 'warn'] } : false,
     reactRemoveProperties: { properties: ['^data-test$'] },
@@ -18,6 +19,10 @@ const config: NextConfig = {
       displayName: isDevelopment,
       minify: true,
     },
+  },
+  onDemandEntries: {
+    maxInactiveAge: 1000 * 60 * 60,
+    pagesBufferLength: 5,
   },
 }
 
