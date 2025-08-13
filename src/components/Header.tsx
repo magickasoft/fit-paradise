@@ -7,6 +7,8 @@ import { maxDevice } from '@/styles/device'
 import { Link } from '@/i18n/navigation'
 import { FiMenu, FiX } from 'react-icons/fi'
 
+import { LocaleSelect } from '@/components/LocaleSelect'
+
 const Container = styled.header<{ $scrolled: boolean }>`
   background: #ffffff;
   z-index: 9998;
@@ -152,6 +154,7 @@ export const Header = () => {
       </CenterBlock>
 
       <RightBlock>
+        <LocaleSelect />
         <StyledButton href="https://example.com" target="_blank" rel="noopener noreferrer">
           Предложить рецепт
         </StyledButton>

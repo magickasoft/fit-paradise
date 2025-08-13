@@ -7,9 +7,12 @@
       "label": "Button primary"
     }
   },
-  "localeSwitcher": {
+  "localeSelect": {
     "label": "Change language",
-    "locale": "{locale, select, ru {Russia} en {English} other {Unknown}}"
+    "locale": {
+      "ru": "Russian",
+      "en": "English"
+    }
   },
   "manifest": {
     "name": "next-intl example"

@@ -10,9 +10,12 @@ declare const messages: {
       label: 'Кнопка primary'
     }
   }
-  localeSwitcher: {
+  localeSelect: {
     label: 'Выберите язык'
-    locale: '{locale, select, ru {Russia} en {English} other {Unknown}}'
+    locale: {
+      ru: 'Русский'
+      en: 'Английский'
+    }
   }
   manifest: {
     name: 'next-intl example'
