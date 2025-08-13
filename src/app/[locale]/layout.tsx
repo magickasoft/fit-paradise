@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { YandexMetricaProvider } from '@artginzburg/next-ym'
-import StyledComponentsRegistry from '@/components/StyledComponentsRegistry'
+import Script from 'next/script'
 import { notFound } from 'next/navigation'
 import { Locale, hasLocale, NextIntlClientProvider } from 'next-intl'
 // import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { setRequestLocale } from 'next-intl/server'
+import { YandexMetricaProvider } from '@artginzburg/next-ym'
 import { routing } from '@/i18n/routing'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -49,15 +49,36 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <Script
+          id="remove-extra-attributes"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {
+              var remove = function() {
+              var b = document.body;
+                if (b) {
+                  b.removeAttribute('cz-shortcut-listen');
+                }
+              };
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', remove, { once: true });
+              } else {
+                remove();
+              }
+            })();
+            `,
+          }}
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
         <NextIntlClientProvider>
-          <StyledComponentsRegistry>
-            <YandexMetricaProvider>
-              <Header />
-              {children}
-              <Footer />
-            </YandexMetricaProvider>
-          </StyledComponentsRegistry>
+          <YandexMetricaProvider>
+            <Header />
+            {children}
+            <Footer />
+          </YandexMetricaProvider>
         </NextIntlClientProvider>
       </body>
     </html>
