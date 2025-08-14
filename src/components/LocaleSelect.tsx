@@ -3,7 +3,7 @@
 import React, { useState, useTransition } from 'react'
 import { useParams } from 'next/navigation'
 import { usePathname, useRouter } from '@/i18n/navigation'
-import { routing } from '@/i18n/routing'
+import { locales } from '@/i18n/constants'
 import { Locale, useLocale } from 'next-intl'
 import styled from 'styled-components'
 
@@ -66,6 +66,7 @@ export const LocaleSelect = React.memo(function LocaleSelect() {
     if (nextLocale === currentLocale || disabled) return
 
     startTransition(() => {
+      localStorage.setItem('user-locale', nextLocale)
       router.replace(
         { pathname, params } as unknown as Parameters<typeof router.replace>[0],
         { locale: nextLocale } as ReplaceOptions,
@@ -81,7 +82,7 @@ export const LocaleSelect = React.memo(function LocaleSelect() {
 
       {open && (
         <Dropdown>
-          {routing.locales
+          {locales
             .filter(locale => locale !== currentLocale)
             .map(locale => (
               <LocaleOption key={locale} onClick={() => handleChange(locale as Locale)}>
