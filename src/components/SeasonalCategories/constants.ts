@@ -7,10 +7,10 @@ export const SEASONAL_CATEGORIES_ARR = [
     color: '#FFD8D8',
   },
   {
-    key: 'summer-menu',
-    name: 'summer-menu',
-    label: 'Летнее меню',
-    img: '/static/seasonal-categories/summer-menu.png',
+    key: 'salads',
+    name: 'salads',
+    label: 'Салаты',
+    img: '/static/seasonal-categories/salads.png',
     color: '#C1E1C1',
   },
 ]

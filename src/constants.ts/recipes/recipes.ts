@@ -3,8 +3,9 @@ import { DESSERT } from './dessert'
 import { DINNER } from './dinner'
 import { GRILL } from './grill'
 import { HEALTHY } from './healthy'
+import { SALADS } from './salads'
 import { SNACKS } from './snacks'
-import { SUMMER_MENU } from './summer-menu'
+
 import { SUPPER } from './supper'
 
 export enum RecipeCategories {
@@ -15,7 +16,7 @@ export enum RecipeCategories {
   DESSERT = 'dessert',
   SNACKS = 'snacks',
   GRILL = 'grill',
-  SUMMER_MENU = 'summer-menu',
+  SALADS = 'salads',
 }
 
 export interface MetaSeo {
@@ -80,5 +81,5 @@ export const RECIPES_OBJ: {
   dessert: [...DESSERT],
   snacks: [...SNACKS],
   grill: [...GRILL],
-  'summer-menu': [...SUMMER_MENU],
+  salads: [...SALADS],
 }
