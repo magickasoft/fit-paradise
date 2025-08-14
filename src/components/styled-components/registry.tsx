@@ -4,11 +4,11 @@ import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
-export interface StyledComponentsRegistryProps {
+export interface RegistryProps {
   children: React.ReactNode
 }
 
-export default function StyledComponentsRegistry({ children }: Readonly<StyledComponentsRegistryProps>) {
+export default function Registry({ children }: Readonly<RegistryProps>) {
   const [sheet] = useState(() => new ServerStyleSheet())
 
   useServerInsertedHTML(() => {
