@@ -10,8 +10,8 @@
   "localeSelect": {
     "label": "Change language",
     "locale": {
-      "ru": "Russian",
-      "en": "English"
+      "ru": "Rus",
+      "en": "Eng"
     }
   },
   "manifest": {

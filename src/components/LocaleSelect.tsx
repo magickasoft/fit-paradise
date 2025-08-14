@@ -1,42 +1,95 @@
 'use client'
 
-import React, { ChangeEvent, useTransition } from 'react'
+import React, { useState, useTransition } from 'react'
 import { useParams } from 'next/navigation'
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
-import { Locale, useLocale, useTranslations } from 'next-intl'
+import { Locale, useLocale } from 'next-intl'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  position: relative;
+  display: inline-block;
+`
+
+const CurrentLocaleButton = styled.button`
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #333333;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+`
+
+const Dropdown = styled.div`
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 6px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+`
+
+const LocaleOption = styled.button`
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  color: #333333;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+`
 
 export const LocaleSelect = React.memo(function LocaleSelect() {
-  const t = useTranslations('localeSelect')
   const currentLocale = useLocale()
   const router = useRouter()
   const [disabled, startTransition] = useTransition()
   const pathname = usePathname()
   const params = useParams()
+  const [open, setOpen] = useState(false)
 
-  const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = event.target.value as Locale
+  type ReplaceOptions = Parameters<typeof router.replace>[1] & { locale?: string }
+
+  const handleChange = (nextLocale: Locale) => {
+    if (nextLocale === currentLocale || disabled) return
+
     startTransition(() => {
       router.replace(
-        // @ts-expect-error -- TypeScript will validate that only known `params`
-        // are used in combination with a given `pathname`. Since the two will
-        // always match for the current route, we can skip runtime checks.
-        { pathname, params },
-        { locale: nextLocale },
+        { pathname, params } as unknown as Parameters<typeof router.replace>[0],
+        { locale: nextLocale } as ReplaceOptions,
       )
     })
+
+    setOpen(false)
   }
 
   return (
-    <label>
-      <p>{t('label')}</p>
-      <select value={currentLocale} disabled={disabled} onChange={onChange}>
-        {routing.locales.map(value => (
-          <option key={value} value={value}>
-            {t(`locale.${value}`)}
-          </option>
-        ))}
-      </select>
-    </label>
+    <Wrapper>
+      <CurrentLocaleButton onClick={() => setOpen(prev => !prev)}>{currentLocale}</CurrentLocaleButton>
+
+      {open && (
+        <Dropdown>
+          {routing.locales
+            .filter(locale => locale !== currentLocale)
+            .map(locale => (
+              <LocaleOption key={locale} onClick={() => handleChange(locale as Locale)}>
+                {locale}
+              </LocaleOption>
+            ))}
+        </Dropdown>
+      )}
+    </Wrapper>
   )
 })

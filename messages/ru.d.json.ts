@@ -13,8 +13,8 @@ declare const messages: {
   localeSelect: {
     label: 'Выберите язык'
     locale: {
-      ru: 'Русский'
-      en: 'Английский'
+      ru: 'Рус'
+      en: 'Англ'
     }
   }
   manifest: {
