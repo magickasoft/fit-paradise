@@ -41,4 +41,11 @@ export const CATEGORIES_ARR = [
     img: '/static/main-page-imgs/snacks.png',
     color: '#ECEBE7',
   },
+  {
+    key: 'drinks',
+    name: 'drinks',
+    label: 'Напитки',
+    img: '/static/main-page-imgs/drinks.png',
+    color: '#ECEBE7',
+  },
 ]
