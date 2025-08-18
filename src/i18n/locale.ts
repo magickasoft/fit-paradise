@@ -1,8 +1,10 @@
 import { defaultLocale, locales } from './constants'
 import type { SupportedLocale } from './constants'
 
+const supportedLocales = new Set<string>(locales)
+
 const isSupportedLocale = (locale: string): locale is SupportedLocale => {
-  return locales.includes(locale as SupportedLocale)
+  return supportedLocales.has(locale)
 }
 
 const getUrlLocale = (): SupportedLocale | null => {
@@ -19,10 +21,13 @@ const getSavedLocale = (): SupportedLocale | null => {
 
 const getBrowserLocale = (): SupportedLocale | null => {
   if (typeof navigator === 'undefined') return null
-  const lang = navigator.languages.find(l => isSupportedLocale(l.split('-')[0]))
-  return lang ? (lang.split('-')[0] as SupportedLocale) : null
+  for (const lang of navigator.languages) {
+    const code = lang.split('-', 1)[0]
+    if (isSupportedLocale(code)) return code
+  }
+  return null
 }
 
 export const getDefaultLocale = (): SupportedLocale => {
-  return getSavedLocale() ?? getBrowserLocale() ?? getUrlLocale() ?? defaultLocale
+  return getSavedLocale() || getBrowserLocale() || getUrlLocale() || defaultLocale
 }
