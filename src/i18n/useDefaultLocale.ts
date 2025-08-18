@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import type { SupportedLocale } from './constants'
 import { defaultLocale } from './constants'
-import { getDefaultLocale } from './locale'
+import { getDefaultLocale } from './getDefaultLocale'
 
 export const useDefaultLocale = (): SupportedLocale => {
   const [locale, setLocale] = useState<SupportedLocale>(defaultLocale)
