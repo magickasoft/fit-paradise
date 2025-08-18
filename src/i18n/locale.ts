@@ -7,32 +7,22 @@ const isSupportedLocale = (locale: string): locale is SupportedLocale => {
 
 const getUrlLocale = (): SupportedLocale | null => {
   if (typeof window === 'undefined') return null
-  const urlParams = new URLSearchParams(window.location.search)
-  const urlLocale = urlParams.get('lang')
+  const urlLocale = new URLSearchParams(window.location.search).get('lang')
   return urlLocale && isSupportedLocale(urlLocale) ? urlLocale : null
 }
 
+const getSavedLocale = (): SupportedLocale | null => {
+  if (typeof window === 'undefined') return null
+  const savedLocale = localStorage.getItem('user-locale')
+  return savedLocale && isSupportedLocale(savedLocale) ? savedLocale : null
+}
+
+const getBrowserLocale = (): SupportedLocale | null => {
+  if (typeof navigator === 'undefined') return null
+  const lang = navigator.languages.find(l => isSupportedLocale(l.split('-')[0]))
+  return lang ? (lang.split('-')[0] as SupportedLocale) : null
+}
+
 export const getDefaultLocale = (): SupportedLocale => {
-  if (typeof window !== 'undefined') {
-    const savedLocale = localStorage.getItem('user-locale')
-    if (savedLocale && isSupportedLocale(savedLocale)) {
-      return savedLocale
-    }
-  }
-
-  if (typeof navigator !== 'undefined') {
-    for (const lang of navigator.languages) {
-      const code = lang.split('-')[0]
-      if (isSupportedLocale(code)) {
-        return code
-      }
-    }
-  }
-
-  const urlLocale = getUrlLocale()
-  if (urlLocale) {
-    return urlLocale
-  }
-
-  return defaultLocale
+  return getSavedLocale() ?? getBrowserLocale() ?? getUrlLocale() ?? defaultLocale
 }
