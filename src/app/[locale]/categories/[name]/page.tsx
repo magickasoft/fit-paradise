@@ -1,7 +1,7 @@
 'use client'
 
 import { PageWrapper } from '@/components/PageWrapper'
-import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
+import { RECIPES_OBJ } from '@/constants/recipes/recipes'
 import { RecipeCard } from '@/components/Cards/RecipeCard'
 import { use } from 'react' // Import the use hook
 import styled from 'styled-components'

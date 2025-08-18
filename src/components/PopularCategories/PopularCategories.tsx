@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { RecipeCard } from '../Cards/RecipeCard'
 import { CATEGORIES_ARR } from './constants'
 import { CategoryCard } from '../Cards/CategoryCard'
-import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
+import { RECIPES_OBJ } from '@/constants/recipes/recipes'
 import { maxDevice } from '@/styles/device'
 
 const Container = styled.section`

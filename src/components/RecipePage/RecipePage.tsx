@@ -9,7 +9,7 @@ import { DetailCard } from '@/components/Cards'
 
 import { NoList } from '@/components/NoList'
 
-import { Recipe } from '@/constants.ts/recipes/recipes'
+import { Recipe } from '@/constants/recipes/recipes'
 import { FiAlertCircle, FiShuffle } from 'react-icons/fi'
 
 const HeaderContainer = styled.div`

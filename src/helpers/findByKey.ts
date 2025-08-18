@@ -1,10 +1,8 @@
-import { Recipe, RECIPES_OBJ } from '../constants.ts/recipes/recipes'
+import { Recipe, RECIPES_OBJ } from '../constants/recipes/recipes'
 
 export const findByKey = async (key: string): Promise<Recipe | null> => {
-  for (const category in RECIPES_OBJ) {
-    const recipe = RECIPES_OBJ[category].find(item => item.key === key)
-    if (recipe) return recipe
-  }
+  const target = key.toLowerCase()
 
-  return null
+  const allRecipes = Object.values(RECIPES_OBJ).flat()
+  return allRecipes.find(recipe => recipe.key?.toLowerCase() === target) ?? null
 }
