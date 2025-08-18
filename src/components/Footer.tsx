@@ -1,6 +1,6 @@
 'use client'
 
-import { RECIPES_OBJ } from '@/constants.ts/recipes/recipes'
+import { RECIPES_OBJ } from '@/constants/recipes/recipes'
 import styled from 'styled-components'
 
 const Container = styled.div`
