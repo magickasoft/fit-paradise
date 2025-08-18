@@ -29,5 +29,5 @@ const getBrowserLocale = (): SupportedLocale | null => {
 }
 
 export const getDefaultLocale = (): SupportedLocale => {
-  return getSavedLocale() || getBrowserLocale() || getUrlLocale() || defaultLocale
+  return getSavedLocale() ?? getBrowserLocale() ?? getUrlLocale() ?? defaultLocale
 }
