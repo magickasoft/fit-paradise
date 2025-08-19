@@ -4,7 +4,7 @@ import { isSupportedLocale } from './isSupportedLocale'
 export const getBrowserLocale = (): SupportedLocale | null => {
   if (typeof navigator === 'undefined') return null
 
-  const supportedLanguage = navigator.languages.map(lang => lang.split('-', 1)[0]).find(isSupportedLocale)
+  const languageCodes = navigator.languages.map(lang => lang.split('-', 1)[0])
 
-  return supportedLanguage ?? null
+  return languageCodes.find(isSupportedLocale) ?? null
 }
