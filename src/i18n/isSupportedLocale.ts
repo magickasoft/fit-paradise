@@ -3,6 +3,6 @@ import type { SupportedLocale } from './constants'
 
 const supportedLocales = new Set<string>(locales)
 
-export const isSupportedLocale = (locale: string): locale is SupportedLocale => {
-  return supportedLocales.has(locale)
+export const isSupportedLocale = (locale: string | null): locale is SupportedLocale => {
+  return locale !== null && supportedLocales.has(locale)
 }
