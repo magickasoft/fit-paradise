@@ -1,4 +1,4 @@
-name: Code Analysis
+name: SonarCloud Analysis
 
 permissions: read-all
 
@@ -14,18 +14,16 @@ jobs:
   sonarcloud:
     name: Sonarcloud
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-
-      - name: Install Dependencies
-        run: bun install --ci
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
