@@ -7,7 +7,7 @@ import { minDevice } from '@/styles/device'
 import { FiClock, FiStar } from 'react-icons/fi'
 
 const Card = styled.div<{
-  variant?: 'full' | 'base'
+  variant?: string
 }>`
   background: #fffdfa;
   border-radius: 12px;
@@ -15,11 +15,11 @@ const Card = styled.div<{
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: ${({ variant }) => (variant === 'full' ? '100%' : 'auto')};
+  width: ${({ variant }) => (variant === 'base' ? '220px' : '100%')};
+  min-height: 280px;
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  height: 100%;
 
   &:hover {
     transform: translateY(-3px);
@@ -28,11 +28,11 @@ const Card = styled.div<{
 `
 
 const ImageBlock = styled.div<{
-  variant?: 'full' | 'base'
+  variant?: string
 }>`
-  max-height: 140px;
   position: relative;
   width: 100%;
+  height: ${({ variant }) => (variant === 'full' ? '140px' : 'auto')};
   aspect-ratio: 1.3 / 1;
   background: #f5f3f3;
 `
@@ -73,7 +73,6 @@ const Description = styled.div`
 const Characteristic = styled.div`
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 12px;
   font-size: 12px;
