@@ -6,14 +6,16 @@ import { Link } from '@/i18n/navigation'
 import { minDevice } from '@/styles/device'
 import { FiClock, FiStar } from 'react-icons/fi'
 
-const Card = styled.div`
+const Card = styled.div<{
+  variant?: 'full' | 'base'
+}>`
   background: #fffdfa;
   border-radius: 12px;
   border: 1px solid #eee;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: ${({ variant }) => (variant === 'full' ? '100%' : 'auto')};
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -25,7 +27,10 @@ const Card = styled.div`
   }
 `
 
-const ImageBlock = styled.div`
+const ImageBlock = styled.div<{
+  variant?: 'full' | 'base'
+}>`
+  max-height: 140px;
   position: relative;
   width: 100%;
   aspect-ratio: 1.3 / 1;
@@ -88,11 +93,12 @@ type RecipeCardProps = {
   description: string
   time: number
   level: number
+  variant?: 'full' | 'base'
 }
 
 const levels = ['Легко', 'Средне', 'Сложно']
 
-export const RecipeCard = ({ name, img, title, description, time, level }: RecipeCardProps) => {
+export const RecipeCard = ({ name, img, title, description, time, level, variant = 'base' }: RecipeCardProps) => {
   return (
     <Link
       href={{
@@ -102,8 +108,8 @@ export const RecipeCard = ({ name, img, title, description, time, level }: Recip
       locale="ru"
       style={{ textDecoration: 'none', color: 'inherit' }}
     >
-      <Card>
-        <ImageBlock>
+      <Card variant={variant}>
+        <ImageBlock variant={variant}>
           {img ? (
             <Image src={img} alt={title} fill style={{ objectFit: 'cover' }} sizes="220px" />
           ) : (
