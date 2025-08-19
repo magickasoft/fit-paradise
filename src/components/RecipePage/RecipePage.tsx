@@ -9,8 +9,9 @@ import { DetailCard } from '@/components/Cards'
 
 import { NoList } from '@/components/NoList'
 
-import { Recipe } from '@/constants/recipes/recipes'
+import { Recipe, RECIPES_OBJ } from '@/constants/recipes/recipes'
 import { FiAlertCircle, FiShuffle } from 'react-icons/fi'
+import { RecipeCard } from '../Cards/RecipeCard'
 
 const HeaderContainer = styled.div`
   max-width: 1800px;
@@ -299,7 +300,48 @@ const VariationTitle = styled.strong`
   font-size: 0.9rem;
 `
 
+const AnotherRecipesBlock = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 30px;
+`
+
+const RecipesScroll = styled.div`
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 8px;
+  max-width: 94vw;
+  align-items: stretch;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+  }
+`
+
 const RecipePage = ({ recipe }: { recipe: Recipe | null }) => {
+  const category = recipe?.categories?.[0]?.name
+
+  const recipes = category ? RECIPES_OBJ[category]?.slice(0, 10) : []
+
   return (
     <main>
       <PageWrapper>
@@ -419,6 +461,16 @@ const RecipePage = ({ recipe }: { recipe: Recipe | null }) => {
               </DetailsContainer>
             )}
           </>
+        )}
+        {recipes && (
+          <AnotherRecipesBlock>
+            <DetailsTitle>Другие рецепты</DetailsTitle>
+            <RecipesScroll>
+              {recipes.map(({ key, name, ...recipe }) => (
+                <RecipeCard name={name} key={key || name} {...recipe} />
+              ))}
+            </RecipesScroll>
+          </AnotherRecipesBlock>
         )}
       </PageWrapper>
 

@@ -47,7 +47,7 @@ export const SeasonalCategories = () => {
         <Title>СЕЗОННЫЕ КАТЕГОРИИ</Title>
         <Grid>
           {SEASONAL_CATEGORIES_ARR.map(({ key, ...item }) => (
-            <CategoryCard key={key} {...item} />
+            <CategoryCard key={key} {...item} variant="large" />
           ))}
         </Grid>
       </Content>
