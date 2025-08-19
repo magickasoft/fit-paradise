@@ -49,6 +49,7 @@ const CenterBlock = styled.nav<{ $menuOpen?: boolean }>`
 
   a {
     font-size: 18px;
+    font-weight: 600;
     text-decoration: none;
     color: #333333;
     transition: color 0.2s ease;
@@ -88,7 +89,6 @@ const RightBlock = styled.div`
   align-items: center;
   gap: 20px;
 `
-
 const StyledButton = styled.a`
   display: inline-flex;
   align-items: center;
@@ -98,18 +98,24 @@ const StyledButton = styled.a`
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
-  background-color: #ff6f61;
+  background: linear-gradient(90deg, #ff6f61 0%, #ff8a7a 50%, #ff6f61 100%);
   border-radius: 6px;
   transition: all 0.25s ease;
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  background-size: 200% 100%;
 
   &:hover {
-    background-color: #e65c50;
+    background-position: 100% 0;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.4);
   }
+
+  /* Альтернативный вариант с более выраженным градиентом */
+  /* background: linear-gradient(90deg, #ff5e4d 0%, #ff7c6b 50%, #ff5e4d 100%); */
 
   @media ${maxDevice.tablet} {
     height: 36px;

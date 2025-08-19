@@ -65,14 +65,24 @@ const RecipesScroll = styled.div`
   gap: 12px;
   padding-bottom: 8px;
   max-width: 94vw;
+  align-items: stretch;
 
   &::-webkit-scrollbar {
-    height: 6px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
   }
 `
 
