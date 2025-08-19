@@ -13,10 +13,10 @@ const CardHeight: Record<VariantType, string> = {
   slider: '290px',
 }
 
-const Card = styled.div<{ color?: string; variant: VariantType; bgImage?: string; bgSize?: string }>`
+const Card = styled.div<{ color?: string; variant: VariantType; bgimage?: string; bgsize?: string }>`
   background-color: ${({ color }) => color || '#f7f5f6'};
-  background-image: ${({ bgImage }) => (bgImage ? `url(${bgImage})` : 'none')};
-  background-size: ${({ bgSize }) => bgSize || 'cover'};
+  background-image: ${({ bgimage }) => (bgimage ? `url(${bgimage})` : 'none')};
+  background-size: ${({ bgsize }) => bgsize || 'cover'};
   background-position: center;
   background-repeat: no-repeat;
   padding: ${({ variant }) => (variant === 'large' ? '20px' : '12px')};
@@ -117,14 +117,14 @@ export const CategoryCard = ({
   color,
   name,
   variant = 'large',
-  bgSize = 'cover',
+  backgroundSize = 'cover',
 }: {
   img: string | null
   label: string
   color: string
   name: string
   variant?: VariantType
-  bgSize?: string
+  backgroundSize?: string
 }) => {
   return (
     <Link
@@ -134,7 +134,7 @@ export const CategoryCard = ({
       }}
       locale="ru"
     >
-      <Card role="link" color={color} variant={variant} bgImage={img || undefined} bgSize={bgSize}>
+      <Card role="link" color={color} variant={variant} bgimage={img || undefined} bgsize={backgroundSize}>
         <Title className="card-title" variant={variant}>
           {label}
         </Title>
