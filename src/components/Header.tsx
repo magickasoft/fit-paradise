@@ -42,9 +42,16 @@ const LeftBlock = styled.div`
   }
 `
 
+const TextLogo = styled.span`
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+`
+
 const CenterBlock = styled.nav<{ $menuOpen?: boolean }>`
   display: flex;
-  gap: 24px;
+  gap: 40px;
   align-items: center;
 
   a {
@@ -114,9 +121,6 @@ const StyledButton = styled.a`
     box-shadow: 0 4px 12px rgba(255, 111, 97, 0.4);
   }
 
-  /* Альтернативный вариант с более выраженным градиентом */
-  /* background: linear-gradient(90deg, #ff5e4d 0%, #ff7c6b 50%, #ff5e4d 100%); */
-
   @media ${maxDevice.tablet} {
     height: 36px;
     font-size: 14px;
@@ -146,24 +150,26 @@ export const Header = () => {
     <Container $scrolled={scrolled}>
       <LeftBlock>
         <Link href="/" locale="ru">
-          <Image src="/static/povr-eshka-logo.png" alt="logo" width={50} height={50} priority />
+          <TextLogo>Fit-Paradise</TextLogo>
         </Link>
       </LeftBlock>
 
       <CenterBlock $menuOpen={menuOpen}>
         <Link href="/" locale="ru">
-          Главная
+          Тренировки
         </Link>
-        <Link href="/categories" locale="ru">
-          Категории
+        <Link href="/programs" locale="ru">
+          Программы
+        </Link>
+        <Link href="/recipes" locale="ru">
+          Рецепты
+        </Link>
+        <Link href="/articles" locale="ru">
+          Статьи
         </Link>
       </CenterBlock>
-
       <RightBlock>
         <LocaleSelect />
-        <StyledButton href="https://example.com" target="_blank" rel="noopener noreferrer">
-          Предложить рецепт
-        </StyledButton>
         <BurgerMenu onClick={() => setMenuOpen(prev => !prev)}>{menuOpen ? <FiX /> : <FiMenu />}</BurgerMenu>
       </RightBlock>
     </Container>

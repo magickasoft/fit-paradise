@@ -7,13 +7,14 @@ import { Link } from '@/i18n/navigation'
 type VariantType = 'large' | 'medium' | 'small' | 'slider'
 
 const CardHeight: Record<VariantType, string> = {
-  large: '250px',
+  large: '400px',
   medium: '200px',
   small: '180px',
   slider: '290px',
 }
 
 const Card = styled.div<{ color?: string; variant: VariantType; bgimage?: string; bgsize?: string }>`
+  width: 100%;
   background-color: ${({ color }) => color || '#f7f5f6'};
   background-image: ${({ bgimage }) => (bgimage ? `url(${bgimage})` : 'none')};
   background-size: ${({ bgsize }) => bgsize || 'cover'};

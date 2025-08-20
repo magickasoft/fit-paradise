@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 
 import { maxDevice } from '@/styles/device'
-import { SEASONAL_CATEGORIES_ARR } from '@/components/SeasonalCategories/constants'
+import { SEASONAL_CATEGORIES_ARR } from '@/components/MainCategories/constants'
 import { CATEGORIES_ARR } from '@/components/PopularCategories/constants'
 import { CategoryCard } from '@/components/Cards/CategoryCard'
 import { PageWrapper } from '@/components/PageWrapper'

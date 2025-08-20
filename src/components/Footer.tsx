@@ -1,6 +1,5 @@
 'use client'
 
-import { RECIPES_OBJ } from '@/constants/recipes/recipes'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -14,13 +13,9 @@ const Container = styled.div`
 `
 
 export const Footer = () => {
-  const recipesCount = Object.values(RECIPES_OBJ).reduce((acc, recipes) => {
-    return acc + recipes.length
-  }, 0)
-
   return (
     <footer>
-      <Container>{recipesCount}</Container> {/* Удалён лишний проп color */}
+      <Container>Fit-Paradise 2025</Container>
     </footer>
   )
 }

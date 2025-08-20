@@ -2,7 +2,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Locale } from 'next-intl'
 
 import { use } from 'react'
-import { SeasonalCategories } from '@/components/SeasonalCategories'
+import { MainCategories } from '@/components/MainCategories'
 import { PopularCategories } from '@/components/PopularCategories'
 
 type Props = {
@@ -18,7 +18,7 @@ export default function IndexPage({ params }: Props) {
     <>
       {/* <Meta /> */}
       {/* <Intro /> */}
-      <SeasonalCategories />
+      <MainCategories />
       <PopularCategories />
     </>
   )
