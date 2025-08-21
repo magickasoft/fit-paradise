@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { notFound } from 'next/navigation'
-import { type Locale, hasLocale, NextIntlClientProvider } from 'next-intl'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 // import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { setRequestLocale } from 'next-intl/server'
 import { YandexMetricaProvider } from '@artginzburg/next-ym'
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export interface LocaleLayoutProps {
   children: ReactNode
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }
 
 export function generateStaticParams() {
