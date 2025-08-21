@@ -116,7 +116,6 @@ export const CategoryCard = ({
   img,
   label,
   color,
-  name,
   variant = 'large',
   backgroundSize = 'cover',
 }: {
@@ -130,8 +129,8 @@ export const CategoryCard = ({
   return (
     <Link
       href={{
-        pathname: '/categories/[name]',
-        params: { name },
+        pathname: '/',
+        // params: { name },
       }}
       locale="ru"
     >

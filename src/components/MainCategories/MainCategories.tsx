@@ -30,16 +30,6 @@ const Content = styled.div`
   padding-top: 100px;
 `
 
-const Title = styled.h2`
-  margin-bottom: 24px;
-  font-size: 24px;
-
-  @media ${maxDevice.tablet} {
-    font-size: 20px;
-    text-align: center;
-  }
-`
-
 export const MainCategories = () => {
   return (
     <Container id="techStacks">

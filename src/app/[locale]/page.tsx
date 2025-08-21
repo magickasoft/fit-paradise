@@ -16,8 +16,6 @@ export default function IndexPage({ params }: Props) {
 
   return (
     <>
-      {/* <Meta /> */}
-      {/* <Intro /> */}
       <MainCategories />
       <PopularCategories />
     </>

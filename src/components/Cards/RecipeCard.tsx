@@ -2,7 +2,6 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
 import { minDevice } from '@/styles/device'
 import { FiClock, FiStar } from 'react-icons/fi'
 
@@ -97,50 +96,50 @@ type RecipeCardProps = {
 
 const levels = ['Легко', 'Средне', 'Сложно']
 
-export const RecipeCard = ({ name, img, title, description, time, level, variant = 'base' }: RecipeCardProps) => {
+export const RecipeCard = ({ img, title, description, time, level, variant = 'base' }: RecipeCardProps) => {
   return (
-    <Link
-      href={{
-        pathname: '/recipe/[name]',
-        params: { name },
-      }}
-      locale="ru"
-      style={{ textDecoration: 'none', color: 'inherit' }}
-    >
-      <Card variant={variant}>
-        <ImageBlock variant={variant}>
-          {img ? (
-            <Image src={img} alt={title} fill style={{ objectFit: 'cover' }} sizes="220px" />
-          ) : (
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                color: '#aaa',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '14px',
-                fontWeight: 500,
-              }}
-            >
-              Нет изображения
-            </div>
-          )}
-        </ImageBlock>
-        <Content>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-          <Characteristic>
-            <CharItem>
-              <FiClock size={14} /> {time} мин
-            </CharItem>
-            <CharItem>
-              <FiStar size={14} color="#f6a623" /> {levels[level - 1]}
-            </CharItem>
-          </Characteristic>
-        </Content>
-      </Card>
-    </Link>
+    // <Link
+    //   href={{
+    //     pathname: '/recipe/[name]',
+    //     params: { name },
+    //   }}
+    //   locale="ru"
+    //   style={{ textDecoration: 'none', color: 'inherit' }}
+    // >
+    <Card variant={variant}>
+      <ImageBlock variant={variant}>
+        {img ? (
+          <Image src={img} alt={title} fill style={{ objectFit: 'cover' }} sizes="220px" />
+        ) : (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              color: '#aaa',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '14px',
+              fontWeight: 500,
+            }}
+          >
+            Нет изображения
+          </div>
+        )}
+      </ImageBlock>
+      <Content>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <Characteristic>
+          <CharItem>
+            <FiClock size={14} /> {time} мин
+          </CharItem>
+          <CharItem>
+            <FiStar size={14} color="#f6a623" /> {levels[level - 1]}
+          </CharItem>
+        </Characteristic>
+      </Content>
+    </Card>
+    // </Link>
   )
 }

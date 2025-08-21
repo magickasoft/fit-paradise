@@ -25,26 +25,7 @@ function getEntries(href: Href) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    ...getEntries('/'),
-    ...getEntries('/categories'),
-    ...getEntries('/privacy-policy'),
-    ...getEntries('/recipe/shashlyk-iz-svininy-na-kefire'),
-    ...getEntries('/recipe/shashlyk-iz-kurinogo-bedra'),
-    ...getEntries('/recipe/scrambled-eggs'),
-    ...getEntries('/recipe/scrambled-eggs-with-broccoli'),
-    ...getEntries('/recipe/ovsjanaja-kasha-s-jablokami-i-koricej'),
-    ...getEntries('/recipe/borshch-s-pampushkami'),
-    ...getEntries('/recipe/okroshka-na-kvase'),
-    ...getEntries('/recipe/okroshka-na-kefire'),
-    ...getEntries('/recipe/rublenye-kotlety-iz-grudki-na-skovorode'),
-    ...getEntries('/recipe/stejk-ribaj-na-elektrogrile'),
-    ...getEntries('/recipe/mjaso-po-francuzski-s-pomidorami-i-syrom'),
-    ...getEntries('/recipe/uzbekskij-plov-s-govyadinoj'),
-    ...getEntries('/recipe/grecheskij-salat'),
-    ...getEntries('/recipe/chizkeik'),
-    ...getEntries('/recipe/ragu-iz-kabachkov-v-smetane'),
-    ...getEntries('/recipe/rulety-iz-vetchiny-s-syrnom-i-chesnokom'),
-    ...getEntries('/recipe/kartofelnye-chipsy-v-mikrovolnovke'),
-  ]
+  const hrefs = Object.keys(routing.pathnames) as Href[]
+
+  return hrefs.flatMap(href => getEntries(href))
 }
