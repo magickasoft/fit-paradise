@@ -4,7 +4,7 @@ import React, { useState, useTransition } from 'react'
 import { useParams } from 'next/navigation'
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { locales } from '@/i18n/constants'
-import { Locale, useLocale } from 'next-intl'
+import { type Locale, useLocale } from 'next-intl'
 import styled from 'styled-components'
 import { FiGlobe } from 'react-icons/fi'
 

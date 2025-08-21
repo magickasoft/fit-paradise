@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
-import { Locale } from 'next-intl'
+import type { Locale } from 'next-intl'
 
 import { use } from 'react'
 import { MainCategories } from '@/components/MainCategories'
