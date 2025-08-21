@@ -2,10 +2,8 @@
 
 import styled from 'styled-components'
 
-import { RecipeCard } from '../Cards/RecipeCard'
 import { CATEGORIES_ARR } from './constants'
 import { CategoryCard } from '../Cards/CategoryCard'
-import { RECIPES_OBJ } from '@/constants/recipes/recipes'
 import { maxDevice } from '@/styles/device'
 
 const Container = styled.section`
@@ -22,6 +20,9 @@ const Container = styled.section`
 `
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 10px;
 
   @media ${maxDevice.tablet} {
@@ -39,77 +40,13 @@ const Title = styled.h2`
   }
 `
 
-const CategoryRow = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 32px;
-  gap: 24px;
-
-  @media ${maxDevice.tablet} {
-    flex-direction: column;
-    gap: 4px;
-  }
-`
-
-const CategoryCardWrapper = styled.div`
-  flex-shrink: 0;
-
-  @media ${maxDevice.tablet} {
-    width: 100%;
-  }
-`
-
-const RecipesScroll = styled.div`
-  display: flex;
-  overflow-x: auto;
-  gap: 12px;
-  padding-bottom: 8px;
-  max-width: 94vw;
-  align-items: stretch;
-
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    transition: background 0.3s;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.35);
-  }
-`
-
 export const PopularCategories = () => {
   return (
     <Container id="techStacks">
+      <Title>ПОПУЛЯРНЫЕ КАТЕГОРИИ</Title>
       <Wrapper>
-        <Title>ПОПУЛЯРНЫЕ КАТЕГОРИИ</Title>
-
         {CATEGORIES_ARR.map(({ name, key, ...category }) => {
-          const recipes = RECIPES_OBJ[name]?.slice(0, 10) || []
-
-          return (
-            <CategoryRow key={key || name}>
-              <CategoryCardWrapper>
-                <CategoryCard key={key || name} name={name} {...category} variant="slider" />
-              </CategoryCardWrapper>
-
-              {recipes.length > 0 && (
-                <RecipesScroll>
-                  {recipes.map(({ key, name, ...recipe }) => (
-                    <RecipeCard name={name} key={key || name} {...recipe} />
-                  ))}
-                </RecipesScroll>
-              )}
-            </CategoryRow>
-          )
+          return <CategoryCard key={key || name} name={name} {...category} variant="medium" />
         })}
       </Wrapper>
     </Container>

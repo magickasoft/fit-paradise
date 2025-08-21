@@ -1,7 +1,6 @@
 'use client'
 
 import styled from 'styled-components'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { maxDevice } from '@/styles/device'
 import { Link } from '@/i18n/navigation'
@@ -42,9 +41,16 @@ const LeftBlock = styled.div`
   }
 `
 
+const TextLogo = styled.span`
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+`
+
 const CenterBlock = styled.nav<{ $menuOpen?: boolean }>`
   display: flex;
-  gap: 24px;
+  gap: 40px;
   align-items: center;
 
   a {
@@ -89,45 +95,6 @@ const RightBlock = styled.div`
   align-items: center;
   gap: 20px;
 `
-const StyledButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  padding: 0 20px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #ffffff;
-  background: linear-gradient(90deg, #ff6f61 0%, #ff8a7a 50%, #ff6f61 100%);
-  border-radius: 6px;
-  transition: all 0.25s ease;
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-  background-size: 200% 100%;
-
-  &:hover {
-    background-position: 100% 0;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.4);
-  }
-
-  /* Альтернативный вариант с более выраженным градиентом */
-  /* background: linear-gradient(90deg, #ff5e4d 0%, #ff7c6b 50%, #ff5e4d 100%); */
-
-  @media ${maxDevice.tablet} {
-    height: 36px;
-    font-size: 14px;
-    padding: 0 16px;
-  }
-
-  @media ${maxDevice.mobileL} {
-    width: 100%;
-    justify-content: center;
-  }
-`
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -146,24 +113,26 @@ export const Header = () => {
     <Container $scrolled={scrolled}>
       <LeftBlock>
         <Link href="/" locale="ru">
-          <Image src="/static/povr-eshka-logo.png" alt="logo" width={50} height={50} priority />
+          <TextLogo>Fit-Paradise</TextLogo>
         </Link>
       </LeftBlock>
 
       <CenterBlock $menuOpen={menuOpen}>
         <Link href="/" locale="ru">
-          Главная
+          Тренировки
         </Link>
-        <Link href="/categories" locale="ru">
-          Категории
+        <Link href="/" locale="ru">
+          Программы
+        </Link>
+        <Link href="/" locale="ru">
+          Рецепты
+        </Link>
+        <Link href="/" locale="ru">
+          Статьи
         </Link>
       </CenterBlock>
-
       <RightBlock>
         <LocaleSelect />
-        <StyledButton href="https://example.com" target="_blank" rel="noopener noreferrer">
-          Предложить рецепт
-        </StyledButton>
         <BurgerMenu onClick={() => setMenuOpen(prev => !prev)}>{menuOpen ? <FiX /> : <FiMenu />}</BurgerMenu>
       </RightBlock>
     </Container>

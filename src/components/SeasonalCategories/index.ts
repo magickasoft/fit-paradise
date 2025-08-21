@@ -1,1 +1,0 @@
-export { SeasonalCategories } from './SeasonalCategories'
