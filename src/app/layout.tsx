@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import GlobalStyle from '@/components/styled-components/global-style'
 import StyledComponentsRegistry from '@/components/styled-components/registry'
 
