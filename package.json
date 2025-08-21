@@ -13,8 +13,9 @@
     "qlty:check": "qlty check --all",
     "qlty:fmt": "qlty fmt --all",
     "qlty:smells": "qlty smells --all",
-    "biome:format": "./node_modules/.bin/biome format --write ./src",
-    "biome:lint": "./node_modules/.bin/biome lint --write ./src"
+    "biome:format": "./node_modules/.bin/biome format ./src",
+    "biome:lint": "./node_modules/.bin/biome lint ./src",
+    "biome:lint:fix": "./node_modules/.bin/biome lint --write ./src"
   },
   "dependencies": {
     "@artginzburg/next-ym": "^1.3.0",
