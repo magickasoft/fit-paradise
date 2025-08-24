@@ -11,5 +11,8 @@ export const routing = defineRouting({
     '/privacy-policy': {
       en: '/privacy-policy',
     },
+    '/sections/[name]': {
+      en: '/sections/[name]',
+    },
   } as const,
 })
