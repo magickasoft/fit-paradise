@@ -3,9 +3,6 @@
 import styled from 'styled-components'
 
 import { maxDevice } from '@/styles/device'
-
-import { CATEGORIES_ARR } from '@/components/PopularCategories/constants'
-import { CategoryCard } from '@/components/Cards/CategoryCard'
 import { PageWrapper } from '@/components/PageWrapper'
 
 const Container = styled.section`

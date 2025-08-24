@@ -1,10 +1,7 @@
 'use client'
 
 import { PageWrapper } from '@/components/PageWrapper'
-import { RecipeCard } from '@/components/Cards/RecipeCard'
-import { use } from 'react' // Import the use hook
 import styled from 'styled-components'
-import { useIsMobile } from '@/components/hooks/useIsMobile.client'
 
 const Cards = styled.div`
   display: grid;
@@ -19,11 +16,11 @@ const Cards = styled.div`
   overflow-x: hidden;
 `
 
-export default function CategoryPage({ params }: { params: Promise<{ name: string }> }) {
-  const resolvedParams = use(params) // Unwrap the Promise
+export default function CategoryPage() {
+  // const resolvedParams = use(params) // Unwrap the Promise
   // const recipes = resolvedParams.name ? RECIPES_OBJ[resolvedParams.name] : []
-  const isMobile = useIsMobile()
-  const variant = isMobile ? 'full' : 'base'
+  // const isMobile = useIsMobile()
+  // const variant = isMobile ? 'full' : 'base'
 
   return (
     <PageWrapper>
