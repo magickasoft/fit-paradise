@@ -124,9 +124,15 @@ export const Header = () => {
         <Link href="/" locale="ru">
           Программы
         </Link>
-        <Link href="/" locale="ru">
+
+        <a
+          href={'https://food-paradise-cyan.vercel.app/categories/healthy'}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: 'block', textDecoration: 'none' }}
+        >
           Рецепты
-        </Link>
+        </a>
         <Link href="/" locale="ru">
           Статьи
         </Link>

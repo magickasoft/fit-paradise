@@ -118,6 +118,8 @@ export const CategoryCard = ({
   color,
   variant = 'large',
   backgroundSize = 'cover',
+  link,
+  name,
 }: {
   img: string | null
   label: string
@@ -125,20 +127,33 @@ export const CategoryCard = ({
   name: string
   variant?: VariantType
   backgroundSize?: string
+  link?: string
 }) => {
+  const renderCard = () => (
+    <Card role="link" color={color} variant={variant} bgimage={img || undefined} bgsize={backgroundSize}>
+      <Title className="card-title" variant={variant}>
+        {label}
+      </Title>
+    </Card>
+  )
+
+  if (link?.startsWith('http')) {
+    return (
+      <a href={link} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textDecoration: 'none' }}>
+        {renderCard()}
+      </a>
+    )
+  }
+
   return (
     <Link
       href={{
-        pathname: '/',
-        // params: { name },
+        pathname: '/sections/[name]',
+        params: { name },
       }}
       locale="ru"
     >
-      <Card role="link" color={color} variant={variant} bgimage={img || undefined} bgsize={backgroundSize}>
-        <Title className="card-title" variant={variant}>
-          {label}
-        </Title>
-      </Card>
+      {renderCard()}
     </Link>
   )
 }

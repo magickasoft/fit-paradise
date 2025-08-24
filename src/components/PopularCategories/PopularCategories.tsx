@@ -22,10 +22,12 @@ const Container = styled.section`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  gap: 20px;
   justify-content: space-between;
   padding: 10px;
 
   @media ${maxDevice.tablet} {
+    flex-direction: column;
     padding: 16px 12px;
   }
 `
