@@ -52,6 +52,7 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
       <head>
         <link rel="icon" href="/favicon.svg" type="image/x-icon" />
         <meta name="yandex-verification" content="c532ec643f9dc55c" />
+        <meta name="yandex-verification" content="51fae019641c89b5" />
         <Script
           id="remove-extra-attributes"
           strategy="beforeInteractive"
