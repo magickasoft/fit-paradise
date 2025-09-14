@@ -51,7 +51,7 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
     <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/x-icon" />
-        <meta name="yandex-verification" content="8687844ec7ac247e" />
+        <meta name="yandex-verification" content="51fae019641c89b5" />
         <Script
           id="remove-extra-attributes"
           strategy="beforeInteractive"
