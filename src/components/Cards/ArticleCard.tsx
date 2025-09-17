@@ -3,9 +3,7 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import { minDevice } from '@/styles/device'
-import { FiClock, FiStar } from 'react-icons/fi'
 import { Link } from '@/i18n/navigation'
-import { use } from 'react'
 
 const Card = styled.div<{
   variant?: string

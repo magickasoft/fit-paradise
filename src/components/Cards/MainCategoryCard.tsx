@@ -3,7 +3,6 @@
 import styled from 'styled-components'
 
 import { Link } from '@/i18n/navigation'
-import { Route } from 'next'
 
 type VariantType = 'large' | 'medium' | 'small' | 'slider'
 

@@ -99,7 +99,7 @@ export default async function LocaleLayout({ children, params }: Readonly<Locale
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <YandexMetricaProvider>
             <Header />
             {children}
