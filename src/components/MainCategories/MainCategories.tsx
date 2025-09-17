@@ -1,9 +1,9 @@
 'use client'
 
 import styled from 'styled-components'
-import { CategoryCard } from '../Cards/CategoryCard'
 import { MAIN_CATEGORIES_ARR } from './constants'
 import { maxDevice } from '@/styles/device'
+import { MainCategoryCard } from '../Cards/MainCategoryCard'
 
 const Container = styled.section`
   background-color: #ffffff;
@@ -44,7 +44,7 @@ export const MainCategories = () => {
       <Content>
         <Grid>
           {MAIN_CATEGORIES_ARR.map(({ key, ...item }) => (
-            <CategoryCard key={key} {...item} variant="large" />
+            <MainCategoryCard title={item.label} key={key} {...item} />
           ))}
         </Grid>
       </Content>

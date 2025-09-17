@@ -1,4 +1,11 @@
-export const MAIN_CATEGORIES_ARR = [
+export const MAIN_CATEGORIES_ARR: {
+  key: string
+  name: 'trainings' | 'nutrition' | 'relaxation'
+  label: string
+  img?: string | null
+  color: string
+  link?: string
+}[] = [
   {
     key: 'trainings',
     name: 'trainings',

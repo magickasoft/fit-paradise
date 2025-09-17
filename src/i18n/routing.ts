@@ -12,7 +12,7 @@ export const routing = defineRouting({
       en: '/privacy-policy',
     },
     '/articles': {
-      en: 'articles',
+      en: '/articles',
     },
     '/articles/[name]': {
       en: '/articles/[name]',
@@ -20,5 +20,8 @@ export const routing = defineRouting({
     '/article/[name]': {
       en: '/article/[name]',
     },
+    '/trainings': { en: '/trainings' },
+    '/relaxation': { en: '/relaxation' },
+    '/nutrition': { en: '/nutrition' },
   } as const,
 })

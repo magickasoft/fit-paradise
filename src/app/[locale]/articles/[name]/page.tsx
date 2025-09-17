@@ -24,8 +24,6 @@ const Cards = styled.div`
 export default function CategoryPage({ params }: { params: Promise<{ name: string }> }) {
   const resolvedParams = use(params)
 
-  console.log('resolvedParams', resolvedParams)
-
   const articles = resolvedParams.name ? ARTICLES_CATEGORIES_ARR[`${resolvedParams.name}Articles`].content : []
   const isMobile = useIsMobile()
   const variant = isMobile ? 'full' : 'base'

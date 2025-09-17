@@ -81,8 +81,6 @@ export const PopularCategories = () => {
 
       <Wrapper>
         {CATEGORIES_ARR.map(({ key, label, ...category }) => {
-          console.log('key', key)
-
           const articles = Object.values(ARTICLES_CATEGORIES_ARR[`${key}Articles`].content).slice(0, 10) || []
 
           return (
