@@ -8,11 +8,13 @@ import { maxDevice } from '@/styles/device'
 const Container = styled.section`
   background-color: #ffffff;
   min-height: 300px;
+
   max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
   padding: 0px 100px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 
   @media ${maxDevice.tablet} {
     padding: 0 0 20px 0;

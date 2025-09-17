@@ -8,10 +8,11 @@ import { maxDevice } from '@/styles/device'
 
 const Container = styled.section`
   background-color: #ffffff;
+
   min-height: 300px;
   max-width: 1920px;
   overflow: hidden;
-  padding: 0px 100px;
+  padding: 0px 50px;
   margin: 0 auto 40px;
 
   @media ${maxDevice.tablet} {
@@ -32,8 +33,14 @@ const Wrapper = styled.div`
   }
 `
 
+const TitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+`
+
 const Title = styled.h2`
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   font-size: 24px;
 
   @media ${maxDevice.tablet} {
@@ -45,7 +52,10 @@ const Title = styled.h2`
 export const PopularCategories = () => {
   return (
     <Container id="techStacks">
-      <Title>ПОПУЛЯРНЫЕ КАТЕГОРИИ</Title>
+      <TitleContainer>
+        <Title>ПОПУЛЯРНЫЕ КАТЕГОРИИ СТАТЕЙ</Title>
+      </TitleContainer>
+
       <Wrapper>
         {CATEGORIES_ARR.map(({ name, key, ...category }) => {
           return <CategoryCard key={key || name} name={name} {...category} variant="medium" />

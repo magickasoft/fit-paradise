@@ -11,8 +11,11 @@ export const routing = defineRouting({
     '/privacy-policy': {
       en: '/privacy-policy',
     },
-    '/sections/[name]': {
-      en: '/sections/[name]',
+    '/articles/[name]': {
+      en: '/articles/[name]',
+    },
+    '/article/[name]': {
+      en: '/article/[name]',
     },
   } as const,
 })

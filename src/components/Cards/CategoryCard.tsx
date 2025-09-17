@@ -148,7 +148,7 @@ export const CategoryCard = ({
   return (
     <Link
       href={{
-        pathname: '/sections/[name]',
+        pathname: '/articles/[name]',
         params: { name },
       }}
       locale="ru"
