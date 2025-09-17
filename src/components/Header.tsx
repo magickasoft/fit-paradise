@@ -118,10 +118,10 @@ export const Header = () => {
       </LeftBlock>
 
       <CenterBlock $menuOpen={menuOpen}>
-        <Link href="/" locale="ru">
+        <Link href="/trainings" locale="ru">
           Тренировки
         </Link>
-        <Link href="/" locale="ru">
+        <Link href="/programs" locale="ru">
           Программы
         </Link>
 
@@ -133,7 +133,7 @@ export const Header = () => {
         >
           Рецепты
         </a>
-        <Link href="/" locale="ru">
+        <Link href="/articles" locale="ru">
           Статьи
         </Link>
       </CenterBlock>

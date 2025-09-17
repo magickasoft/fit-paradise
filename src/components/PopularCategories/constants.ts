@@ -1,30 +1,24 @@
-export const CATEGORIES_ARR = [
+import { advicesArticles } from '@/app/constants/articles/advices'
+import { healthArticles } from '@/app/constants/articles/health'
+import { motivationArticles } from '@/app/constants/articles/motivation'
+
+export const CATEGORIES_ARR: { key: string; label: string; img?: string | null; color: string }[] = [
   {
-    key: 'healthArticles',
-    name: 'healthArticles',
-    label: 'Статьи о здоровье',
-    img: '/static/sections-imgs/healthArticles.jpeg',
+    key: healthArticles.id,
+    label: healthArticles.title,
+    img: healthArticles.img || undefined,
     color: '#E9E4DF',
   },
   {
-    key: 'motivation',
-    name: 'motivation',
-    label: 'Мотивация',
-    img: '/static/sections-imgs/motivation.jpeg',
+    key: motivationArticles.id,
+    label: motivationArticles.title,
+    img: motivationArticles.img || undefined,
     color: '#D8E0E3',
   },
   {
-    key: 'adviсes',
-    name: 'adviсes',
-    label: 'Советы',
-    img: '/static/sections-imgs/advices.jpeg',
+    key: advicesArticles.id,
+    label: advicesArticles.title,
+    img: advicesArticles.img || undefined,
     color: '#DCE6F2',
-  },
-  {
-    key: 'relaxation',
-    name: 'relaxation',
-    label: 'Отдых',
-    img: '/static/sections-imgs/relaxation.jpeg',
-    color: '#ECEBE7',
   },
 ]

@@ -6,26 +6,19 @@ import { Link } from '@/i18n/navigation'
 
 type VariantType = 'large' | 'medium' | 'small' | 'slider'
 
-const CardHeight: Record<VariantType, string> = {
-  large: '400px',
-  medium: '200px',
-  small: '180px',
-  slider: '290px',
-}
-
-const Card = styled.div<{ color?: string; variant: VariantType; bgimage?: string; bgsize?: string }>`
+const Card = styled.div<{ color?: string; bgimage?: string; bgsize?: string }>`
   width: 100%;
   background-color: ${({ color }) => color || '#f7f5f6'};
   background-image: ${({ bgimage }) => (bgimage ? `url(${bgimage})` : 'none')};
   background-size: ${({ bgsize }) => bgsize || 'cover'};
   background-position: center;
   background-repeat: no-repeat;
-  padding: ${({ variant }) => (variant === 'large' ? '20px' : '12px')};
+  padding: '20px';
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: ${({ variant }) => CardHeight[variant]};
+  height: 400px;
   min-width: 250px;
   border-radius: 16px;
   overflow: hidden;
@@ -61,25 +54,12 @@ const Card = styled.div<{ color?: string; variant: VariantType; bgimage?: string
 
   @media (max-width: 768px) {
     min-width: 220px;
-    height: ${({ variant }) => (variant === 'slider' ? '260px' : variant === 'large' ? '220px' : '180px')};
+    height: 220px;
   }
 `
 
-const Title = styled.div<{ variant: VariantType }>`
-  font-size: ${({ variant }) => {
-    switch (variant) {
-      case 'large':
-        return '24px'
-      case 'medium':
-        return '20px'
-      case 'small':
-        return '18px'
-      case 'slider':
-        return '22px'
-      default:
-        return '20px'
-    }
-  }};
+const Title = styled.div`
+  font-size: '24px';
   font-weight: 600;
   line-height: 1.2;
   color: white;
@@ -94,29 +74,15 @@ const Title = styled.div<{ variant: VariantType }>`
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {
-    font-size: ${({ variant }) => {
-      switch (variant) {
-        case 'large':
-          return '20px'
-        case 'medium':
-          return '18px'
-        case 'small':
-          return '16px'
-        case 'slider':
-          return '20px'
-        default:
-          return '18px'
-      }
-    }};
+    font-size: 20px;
     padding: 15px;
   }
 `
 
-export const CategoryCard = ({
+export const MainCategoryCard = ({
   img,
   title,
   color,
-  variant = 'large',
   backgroundSize = 'cover',
   link,
   name,
@@ -124,16 +90,14 @@ export const CategoryCard = ({
   img?: string | null
   title: string
   color: string
-  name: string
+  name: 'trainings' | 'relaxation' | 'nutrition'
   variant?: VariantType
   backgroundSize?: string
   link?: string
 }) => {
   const renderCard = () => (
-    <Card role="link" color={color} variant={variant} bgimage={img || undefined} bgsize={backgroundSize}>
-      <Title className="card-title" variant={variant}>
-        {title}
-      </Title>
+    <Card role="link" color={color} bgimage={img || undefined} bgsize={backgroundSize}>
+      <Title className="card-title">{title}</Title>
     </Card>
   )
 
@@ -146,13 +110,7 @@ export const CategoryCard = ({
   }
 
   return (
-    <Link
-      href={{
-        pathname: '/articles/[name]',
-        params: { name },
-      }}
-      locale="ru"
-    >
+    <Link href={`/${name}`} locale="ru">
       {renderCard()}
     </Link>
   )

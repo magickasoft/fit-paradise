@@ -3,8 +3,9 @@
 import { maxDevice } from '@/styles/device'
 import styled from 'styled-components'
 
-const Container = styled.header`
+const Container = styled.div`
   display: flex;
+  min-height: 80vh;
   margin: 120px 140px 60px 140px;
 
   @media ${maxDevice.tablet} {

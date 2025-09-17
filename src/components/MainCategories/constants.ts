@@ -1,4 +1,11 @@
-export const MAIN_CATEGORIES_ARR = [
+export const MAIN_CATEGORIES_ARR: {
+  key: string
+  name: 'trainings' | 'nutrition' | 'relaxation'
+  label: string
+  img?: string | null
+  color: string
+  link?: string
+}[] = [
   {
     key: 'trainings',
     name: 'trainings',
@@ -7,18 +14,18 @@ export const MAIN_CATEGORIES_ARR = [
     color: '#FFD8D8',
   },
   {
-    key: 'programms',
-    name: 'programms',
-    label: 'Программы',
-    img: '/static/sections-imgs/programms.jpeg',
-    color: '#C1E1C1',
-  },
-  {
     key: 'nutrition',
     name: 'nutrition',
     label: 'Питание',
     img: '/static/sections-imgs/nutrition.jpeg',
     color: '#ECEBE7',
     link: 'https://food-paradise-cyan.vercel.app/categories/healthy',
+  },
+  {
+    key: 'отдых',
+    name: 'relaxation',
+    label: 'Отдых и восстановление',
+    img: '/static/sections-imgs/relaxation.jpeg',
+    color: '#C1E1C1',
   },
 ]
