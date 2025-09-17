@@ -71,21 +71,6 @@ const Description = styled.div`
   overflow: hidden;
 `
 
-const Characteristic = styled.div`
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  color: #444;
-`
-
-const CharItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-`
-
 type ArticleCardProps = {
   img?: string | null
   id: string

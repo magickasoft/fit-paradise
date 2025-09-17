@@ -22,9 +22,15 @@ const Container = styled.section`
 `
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+
+  & > * {
+    flex: 1 1 350px;
+    max-width: 400px;
+  }
 `
 
 const Content = styled.div`

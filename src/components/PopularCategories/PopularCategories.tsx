@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import { CATEGORIES_ARR } from './constants'
 import { CategoryCard } from '../Cards/CategoryCard'
 import { maxDevice } from '@/styles/device'
+import { ArticleCard } from '../Cards/ArticleCard'
+import { ArticlesScroll } from '../RecipesScroll'
+import { ARTICLES_CATEGORIES_ARR } from '@/app/constants/articles'
 
 const Container = styled.section`
   background-color: #ffffff;
@@ -22,9 +25,9 @@ const Container = styled.section`
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: flex-start;
   gap: 20px;
-  justify-content: space-between;
   padding: 10px;
 
   @media ${maxDevice.tablet} {
@@ -49,6 +52,26 @@ const Title = styled.h2`
   }
 `
 
+const CategoryRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 24px;
+
+  @media ${maxDevice.tablet} {
+    flex-direction: column;
+    gap: 4px;
+  }
+`
+
+const CategoryCardWrapper = styled.div`
+  flex-shrink: 0;
+
+  @media ${maxDevice.tablet} {
+    width: 100%;
+  }
+`
+
 export const PopularCategories = () => {
   return (
     <Container id="techStacks">
@@ -57,8 +80,26 @@ export const PopularCategories = () => {
       </TitleContainer>
 
       <Wrapper>
-        {CATEGORIES_ARR.map(({ name, key, ...category }) => {
-          return <CategoryCard key={key || name} name={name} {...category} variant="medium" />
+        {CATEGORIES_ARR.map(({ key, label, ...category }) => {
+          console.log('key', key)
+
+          const articles = Object.values(ARTICLES_CATEGORIES_ARR[`${key}Articles`].content).slice(0, 10) || []
+
+          return (
+            <CategoryRow key={key}>
+              <CategoryCardWrapper>
+                <CategoryCard title={label} key={key} name={key} {...category} variant="slider" />
+              </CategoryCardWrapper>
+
+              {articles.length > 0 && (
+                <ArticlesScroll>
+                  {articles.map(article => (
+                    <ArticleCard key={article.id} {...article} />
+                  ))}
+                </ArticlesScroll>
+              )}
+            </CategoryRow>
+          )
         })}
       </Wrapper>
     </Container>

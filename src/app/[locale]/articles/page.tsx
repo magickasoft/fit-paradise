@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import { maxDevice } from '@/styles/device'
 import { PageWrapper } from '@/components/PageWrapper'
+import { ARTICLES_CATEGORIES_ARR } from '@/app/constants/articles'
+import { CategoryCard } from '@/components/Cards/CategoryCard'
 
 const Container = styled.section`
   background-color: #ffffff;
@@ -29,15 +31,16 @@ const Grid = styled.div`
 `
 
 const CategoriesPage = () => {
+  console.log('ARTICLES_CATEGORIES_ARR', ARTICLES_CATEGORIES_ARR)
+
   return (
     <PageWrapper>
       <Container>
         <Content>
           <Grid>
-            CATEGORY
-            {/* {allCategories.map(({ key, ...item }) => (
-              <CategoryCard key={key} {...item} variant="medium" />
-            ))} */}
+            {Object.values(ARTICLES_CATEGORIES_ARR).map(({ id, ...item }) => (
+              <CategoryCard color={''} name={id} key={id} {...item} variant="medium" />
+            ))}
           </Grid>
         </Content>
       </Container>

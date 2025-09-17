@@ -114,15 +114,15 @@ const Title = styled.div<{ variant: VariantType }>`
 
 export const CategoryCard = ({
   img,
-  label,
+  title,
   color,
   variant = 'large',
   backgroundSize = 'cover',
   link,
   name,
 }: {
-  img: string | null
-  label: string
+  img?: string | null
+  title: string
   color: string
   name: string
   variant?: VariantType
@@ -132,7 +132,7 @@ export const CategoryCard = ({
   const renderCard = () => (
     <Card role="link" color={color} variant={variant} bgimage={img || undefined} bgsize={backgroundSize}>
       <Title className="card-title" variant={variant}>
-        {label}
+        {title}
       </Title>
     </Card>
   )

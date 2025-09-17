@@ -133,7 +133,7 @@ export const Header = () => {
         >
           Рецепты
         </a>
-        <Link href="/" locale="ru">
+        <Link href="/articles" locale="ru">
           Статьи
         </Link>
       </CenterBlock>
