@@ -18,7 +18,7 @@ const Card = styled.div<{ color?: string; bgimage?: string; bgsize?: string }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 400px;
+  height: 500px;
   min-width: 250px;
   border-radius: 16px;
   overflow: hidden;
@@ -59,7 +59,7 @@ const Card = styled.div<{ color?: string; bgimage?: string; bgsize?: string }>`
 `
 
 const Title = styled.div`
-  font-size: '24px';
+  font-size: '36px';
   font-weight: 600;
   line-height: 1.2;
   color: white;
