@@ -1,6 +1,8 @@
 import { advicesArticles } from './advices'
 import { healthArticles } from './health'
 import { motivationArticles } from './motivation'
+import { traningsArticles } from './tranings'
+import { beautyArticles } from './beauty'
 
 export interface Article {
   id: string
@@ -25,6 +27,8 @@ export const ARTICLES_CATEGORIES_ARR: Record<string, ArticleCategory> = {
   advicesArticles,
   healthArticles,
   motivationArticles,
+  traningsArticles,
+  beautyArticles,
 }
 
 export const ALL_ARTICLES: { [key: string]: Article } = Object.values(ARTICLES_CATEGORIES_ARR).reduce((acc, obj) => {
