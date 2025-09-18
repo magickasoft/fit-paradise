@@ -4,6 +4,7 @@ import type { Locale } from 'next-intl'
 import { use } from 'react'
 import { MainCategories } from '@/components/MainCategories'
 import { PopularCategories } from '@/components/PopularCategories'
+import { MainHeader } from '@/components/MainHeader'
 
 type Props = {
   params: Promise<{ locale: Locale }>
@@ -16,6 +17,7 @@ export default function IndexPage({ params }: Props) {
 
   return (
     <>
+      <MainHeader />
       <MainCategories />
       <PopularCategories />
     </>

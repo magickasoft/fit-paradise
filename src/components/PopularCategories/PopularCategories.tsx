@@ -38,13 +38,18 @@ const Wrapper = styled.div`
 
 const TitleContainer = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: #ff4747;
 `
 
 const Title = styled.h2`
-  margin-bottom: 32px;
   font-size: 24px;
+  color: #ffffff;
 
   @media ${maxDevice.tablet} {
     font-size: 20px;
