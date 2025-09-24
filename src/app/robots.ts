@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { DOMAIN } from '../variables/domain'
+import { URL } from '../variables/url'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/*', '/_next/*'],
       },
     ],
-    sitemap: [`https://${DOMAIN}/sitemap.xml`],
+    sitemap: [`https://${URL}/sitemap.xml`],
   }
 }
