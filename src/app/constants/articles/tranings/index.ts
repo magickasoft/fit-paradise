@@ -4,6 +4,7 @@ import rukiKakUBalerinySekretIzyashchnyhISilnyhRukVsegoZa30MinutVDen from './ruk
 import berezhnayaRastyazhkaNaVseTeloGibkostKakOsnovaGarmoniiIKrasoty from './berezhnaya-rastyazhka-na-vse-telo-gibkost-kak-osnova-garmonii-i-krasoty.json'
 import kakNeSzhechMyshcyPriTrenirovkahSohranyaemRezultatUpornogoTruda from './kak-ne-szhech-myshcy-pri-trenirovkah-sohranyaem-rezultat-upornogo-truda.json'
 import udeliVremyaRazminkePochemu10MinutMogutIzmenitRezultatVseyTrenirovki from './udeli-vremya-razminke-pochemu-10-minut-mogut-izmenit-rezultat-vsey-trenirovki.json'
+import kachestvennyySonOsnovaProgressaVTrenirovkah from './kachestvennyy-son-osnova-progressa-v-trenirovkah.json'
 
 export const traningsArticles = {
   id: 'tranings',
@@ -21,5 +22,6 @@ export const traningsArticles = {
       kakNeSzhechMyshcyPriTrenirovkahSohranyaemRezultatUpornogoTruda,
     'udeli-vremya-razminke-pochemu-10-minut-mogut-izmenit-rezultat-vsey-trenirovki':
       udeliVremyaRazminkePochemu10MinutMogutIzmenitRezultatVseyTrenirovki,
+    'kachestvennyy-son-osnova-progressa-v-trenirovkah': kachestvennyySonOsnovaProgressaVTrenirovkah,
   },
 }
