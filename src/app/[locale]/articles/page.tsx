@@ -31,8 +31,6 @@ const Grid = styled.div`
 `
 
 const CategoriesPage = () => {
-  console.log('ARTICLES_CATEGORIES_ARR', ARTICLES_CATEGORIES_ARR)
-
   return (
     <PageWrapper>
       <Container>

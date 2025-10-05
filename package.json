@@ -15,7 +15,8 @@
     "qlty:smells": "qlty smells --all",
     "biome:format": "./node_modules/.bin/biome format --write ./src",
     "biome:lint": "./node_modules/.bin/biome lint ./src",
-    "biome:lint:fix": "./node_modules/.bin/biome lint --write ./src"
+    "biome:lint:fix": "./node_modules/.bin/biome lint --write ./src",
+    "optimize:images": "bun run scripts/optimize-images.ts"
   },
   "dependencies": {
     "@artginzburg/next-ym": "^1.3.0",
@@ -24,6 +25,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "sharp": "^0.34.4",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
